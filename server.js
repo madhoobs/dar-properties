@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose")
 const expressLayouts = require("express-ejs-layouts")
 const app = express(); 
+require('dotenv').config();
 app.use(express.static("public"))
 const port = process.env.PORT
 app.set("view engine" , "ejs");
@@ -19,4 +20,33 @@ cookie: {maxAge: 3600000}
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use(function(req , res , next){
+    res.locals.currentUser = req.user
+    next()
+})
 
+// Import Routes
+const authRouter = require("./routes/auth")
+
+
+//Mount Routes
+app.use("/", authRouter)
+
+
+// Listen to requests on port 
+app.listen(port, () => {
+    console.log(`Dar properties is running on port ${port}`)
+})
+
+//MongoDB Connection
+mongoose.connect(process.env.mongoDBURL, 
+{ useNewUrlParser : true , 
+useUnifiedTopology: true
+} )
+.then(() => {
+    console.log("MongoDB connected !!!")
+})
+
+.catch((err) => {
+    console.log("MongoDB is not connected " + err)
+})

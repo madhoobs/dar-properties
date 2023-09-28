@@ -4,55 +4,51 @@ const bcrypt = require("bcryptjs")
 const userSchema = mongoose.Schema({
 
     type : {
-
-
+        type : Boolean,
+        required : true
     },
 
     firstName : {
         type : String ,
-        required:true , // red star
+        required : true , // red star
         minlength : [2,"First name must be more than 2 characters"] ,
         maxlength : [99, "This is too much man ... chill !!!!"]
     },
 
 lastName :{
     type : String ,
-    required:true , // red star
+    required : true , // red star
     minlength : [2,"Last name must be more than 2 characters"] ,
     maxlength : [99, "This is too much man ... chill !!!!"]
 },
 
 companyName : {
     type : String ,
-    required:true , // red star
+    required : true , // red star
     minlength : [2,"Last name must be more than 2 characters"] ,
     maxlength : [99, "This is too much man ... chill !!!!"]
 
 },
 
-phoneNumber : {
+phone : {
     type : String ,
-    required:true , // red star
+    required : true , // red star
     minlength : [8] ,
     maxlength : [8]
 
 },
 
-inputEmail : {
+email : {
     type : String ,
     required : true ,
     lowercase : true,
     unique : true
 },
 
-inputPassword : {
+password : {
     type : String ,
     required : true ,
     minlength : [8]
-},
-
-gridCheck : {
-    require : true
 }
 
 })
