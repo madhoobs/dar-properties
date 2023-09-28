@@ -27,10 +27,14 @@ app.use(function(req , res , next){
 
 // Import Routes
 const authRouter = require("./routes/auth")
+const indexRouter = require('./routes/index') 
+
 
 
 //Mount Routes
 app.use("/", authRouter)
+app.use("/",indexRouter)
+
 
 
 // Listen to requests on port 
