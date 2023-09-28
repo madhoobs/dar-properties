@@ -12,6 +12,7 @@ res.render("auth/signup")
 }
 
 exports.auth_signup_post =(req,res)=>{
+    if (req.body.inputPassword === req.body.inputPassword2){
     let user = User(req.body)
 
     let hash =bcrypt.hashSync(req.body.inputPassword, salt)
@@ -26,6 +27,12 @@ exports.auth_signup_post =(req,res)=>{
         console.log(err)
     })
     } 
+else {
+    res.redirect("/auth/signup")
+}
+}
+    
+    
 
 exports.auth_login_get = (req , res) => {
     res.render("auth/login")

@@ -5,6 +5,8 @@ const authCtrl = require("../controllers/auth")
 const isLoggedIn = require("../helper/isLoggedln")
 
 
+// router.use(express.urlencoded({ extended : true}))
+
 // Routes
 router.get("/auth/signup" , authCtrl.auth_signup_get)
 router.post("/auth/signup", authCtrl.auth_signup_post)

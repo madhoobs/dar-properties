@@ -1,53 +1,79 @@
+<script src="/JS/type.js"></script>
 <h1> Create a new Account </h1>
 
 <form method="POST" action="/auth/signup">
-
 <form class="row g-3">
 
     <div class="col-md-4">
         <label for="type" class="form-label">Type</label>
-        <select id="type" class="form-select">
+        <select id="type" name="type" class="form-select" onchange="company()">
             <option selected>Choose</option>
-            <option> Agent </option>
-            <option> Company </option>
-            <option> Customer </option>
-            <option> Owner </option>
-
+            <option id="Company"> Company </option>
+            <option id="Agent"> Agent </option>
+            <option id="Customer"> Customer </option>
         </select>
         </div>
 
-    <div class="col-12">
+    <div class="col-md-6"id="firstName">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName">
+        <input type="text" class="form-control" >
     </div>
 
-    <div class="col-12">
+    <div class="col-md-6" id="lastName">
         <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName">
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="col-md-6" id="companyName">
+        <label for="companyName" class="form-label">Company Name</label>
+        <input type="text" class="form-control" >
+    </div>
+
+    <div class="col-md-6" id="companyCR">
+        <label for="companyCR" class="form-label">Commercial Registration</label>
+        <input type="text" class="form-control" placeholder="CR">
+    </div>
+
+<div id="Address" >
+    <div class="col-md-4">
+        <label for="inputCity" class="form-label">City</label>
+        <select id="inputCity" class="form-select">
+        <option selected>Choose your city</option>
+        <option>...</option>
+
+        </select>
     </div>
 
     <div class="col-12">
-        <label for="companyName" class="form-label">Company Name</label>
-        <input type="text" class="form-control" id="companyName">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Block, Road , Building ">
     </div>
 
-    <div class="col-md-6">
+    </div>
+
+    <div class="col-md-6"  id="phoneNumber">
         <label for="phone" class="form-label">Phone Number</label>
-        <input type="number" class="form-control" id="phoneNumber">
+        <input type="number" class="form-control">
         </div>
     
     
-    <div class="col-md-6">
+    <div class="col-md-6" id="inputEmail">
     <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail">
+    <input type="email" class="form-control" >
     </div>
+
+    <div class="col-md-6" name="inputPassword">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" >
+    </div>
+
+    <div class="col-md-6" name="inputPassword2">
+        <label for="password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" >
+        </div>
+    
 
     <div class="col-md-6">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword">
-    </div>
-
-    <div class="col-12">
     <div class="form-check">
         <input class="form-check-input" type="checkbox" required>
         <label class="form-check-label">

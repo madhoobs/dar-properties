@@ -10,23 +10,28 @@ const userSchema = mongoose.Schema({
 
     firstName : {
         type : String ,
-        required : true , // red star
+        // required : true , // red star
         minlength : [2,"First name must be more than 2 characters"] ,
         maxlength : [99, "This is too much man ... chill !!!!"]
     },
 
 lastName :{
     type : String ,
-    required : true , // red star
+    // required : true , // red star
     minlength : [2,"Last name must be more than 2 characters"] ,
     maxlength : [99, "This is too much man ... chill !!!!"]
 },
 
 companyName : {
     type : String ,
-    required : true , // red star
+    // required : true , // red star
     minlength : [2,"Last name must be more than 2 characters"] ,
     maxlength : [99, "This is too much man ... chill !!!!"]
+
+},
+
+companyCR : {
+type : String ,
 
 },
 
