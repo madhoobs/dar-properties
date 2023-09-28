@@ -15,9 +15,6 @@ exports.auth_signup_post = (req, res) => {
   if (req.body.password === req.body.confirmPassword) {
     let user = User(req.body)
 
-    // if (req.body.isCompany) {
-    //   user
-    // }
     let hash = bcrypt.hashSync(req.body.password, salt)
     user.password = hash
 
