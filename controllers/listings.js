@@ -2,7 +2,9 @@ const User = require('../models/User')
 const Comment = require('../models/Comment')
 
 // Adding a new listing
-exports.listing_add_get = (req, res) => {}
+exports.listing_add_get = (req, res) => {
+  res.render('listing/add')
+}
 exports.listing_add_post = (req, res) => {}
 
 // Showing details of a single listing

@@ -33,10 +33,12 @@ app.use(express.static(__dirname + '/'))
 
 // Import Routes
 const authRouter = require('./routes/auth')
+const listingRouter = require('./routes/listings')
 const indexRouter = require('./routes/index')
 
 //Mount Routes
 app.use('/', authRouter)
+app.use('/', listingRouter)
 app.use('/', indexRouter)
 
 // Listen to requests on port

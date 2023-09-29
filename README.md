@@ -1,7 +1,7 @@
 [![Contributors][contributors-shield]][contributors-url]
-[![Hasan Almadhoob][linkedin-shield]][linkedin-hasan]
-[![Husain Matar][linkedin-shield]][linkedin-husain]
-[![Zainab Sameer][linkedin-shield]][linkedin-zainab]
+[![Hasan Almadhoob][linkedin-hasan-shield]][linkedin-hasan]
+[![Husain Matar][linkedin-husain-shield]][linkedin-husain]
+[![Zainab Sameer][linkedin-zainab-shield]][linkedin-zainab]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -144,11 +144,14 @@ _More screenshots to be added soon!_
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Madhoob/dar-properties.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-1f1f1f?style=for-the-badge&logo=github&colorB=555
 [contributors-url]: https://git.generalassemb.ly/Madhoob/dar-properties/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-hasan-shield]: https://img.shields.io/badge/Hasan%20Almadhoob-0077b5?style=for-the-badge&logo=linkedin
 [linkedin-hasan]: https://www.linkedin.com/in/madhoob
+[linkedin-husain-shield]: https://img.shields.io/badge/Husain%20Matar-0077b5?style=for-the-badge&logo=linkedin
 [linkedin-husain]: https://www.linkedin.com/in/husainmatar
+[linkedin-zainab-shield]: https://img.shields.io/badge/Zainab%20Sameer-0077b5?style=for-the-badge&logo=linkedin
 [linkedin-zainab]: https://www.linkedin.com/in/zainab-alkhadhar
 [product-screenshot]: images/screenshot.png
 [JavaScript]: https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=javascript
