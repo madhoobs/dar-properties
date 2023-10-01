@@ -1,9 +1,22 @@
 const User = require('../models/User')
 const Comment = require('../models/Comment')
+const Listing = require('../models/Listing')
 
 // Adding a new listing
-exports.listing_add_get = (req, res) => {}
-exports.listing_add_post = (req, res) => {}
+exports.listing_add_get = (req, res) => {
+  res.render('listing/add')
+}
+exports.listing_add_post = (req, res) => {
+  let listing = new Listing(req.body)
+  listing
+    .save()
+    .then(() => {
+      res.redirect('/listing/')
+    })
+    .catch((err) => {
+      console.log('Record creation failed. ' + err)
+    })
+}
 
 // Showing details of a single listing
 exports.listing_details_get = (req, res) => {}
