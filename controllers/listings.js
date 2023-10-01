@@ -11,7 +11,16 @@ exports.listing_add_post = (req, res) => {
   listing
     .save()
     .then(() => {
-      res.redirect('/listing/')
+      res.redirect('/')
+      User.findById(req.body.uid)
+        .then((user) => {
+          console.log(user)
+          user.listings.push(listing)
+          user.save()
+        })
+        .catch((err) => {
+          console.log('Adding listing to user failed. ' + err)
+        })
     })
     .catch((err) => {
       console.log('Record creation failed. ' + err)
@@ -19,7 +28,16 @@ exports.listing_add_post = (req, res) => {
 }
 
 // Showing details of a single listing
-exports.listing_details_get = (req, res) => {}
+exports.listing_details_get = (req, res) => {
+  Listing.findById(req.query.id)
+    .populate('uid')
+    .then((listing) => {
+      res.render('listing/detail', { listing })
+    })
+    .catch((err) => {
+      console.log('Please try again. ' + err)
+    })
+}
 
 // Updating an existing listing
 exports.listing_edit_get = (req, res) => {}

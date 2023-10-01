@@ -50,7 +50,20 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
     minlength: [8]
-  }
+  },
+
+  listings: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Listing'
+    }
+  ],
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ]
 })
 
 // Verif Password Method

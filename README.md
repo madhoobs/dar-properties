@@ -138,6 +138,7 @@ _More screenshots to be added soon!_
 - [Trello](https://trello.com/b/PdE3gmsY/project-2)
 - [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
 - [Best README Template](https://github.com/othneildrew/Best-README-Template)
+- [Homepage Template by Themesine](https://www.themesine.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
