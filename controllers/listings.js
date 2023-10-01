@@ -11,7 +11,16 @@ exports.listing_add_post = (req, res) => {
   listing
     .save()
     .then(() => {
-      res.redirect('/listing/')
+      res.redirect('/')
+      User.findById(req.body.uid)
+        .then((user) => {
+          console.log(user)
+          user.listings.push(listing)
+          user.save()
+        })
+        .catch((err) => {
+          console.log('Adding listing to user failed. ' + err)
+        })
     })
     .catch((err) => {
       console.log('Record creation failed. ' + err)

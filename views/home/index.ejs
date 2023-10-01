@@ -1,3 +1,151 @@
-<h1> Dar Properties</h1>
 
-<img src="..." class="img-fluid" alt="...">
+
+  <!--welcome-hero start -->
+  <section id="home" class="welcome-hero">
+    <div class="container">
+      <div class="welcome-hero-txt">
+        <h2>best place to find properties <br> that all you need </h2>
+        <p>
+          Find Best Villa or Apartment in Just One Click
+        </p>
+      </div>
+      <div class="welcome-hero-serch-box">
+        <div class="welcome-hero-form">
+          <div class="single-welcome-hero-form">
+            <h3>what?</h3>
+            <form action="index.html">
+              <input type="text" placeholder="Ex: Villa, Apartment, Office" />
+            </form>
+            <div class="welcome-hero-form-icon">
+              <i class="flaticon-list-with-dots"></i>
+            </div>
+          </div>
+          <div class="single-welcome-hero-form">
+            <h3>location</h3>
+            <form action="index.html">
+              <input type="text" placeholder="Ex: Bahrain Bay, Seef, Riffa" />
+            </form>
+            <div class="welcome-hero-form-icon">
+              <i class="flaticon-gps-fixed-indicator"></i>
+            </div>
+          </div>
+        </div>
+        <div class="welcome-hero-serch">
+          <button class="welcome-hero-btn" onclick="window.location.href='#'">
+            search <i data-feather="search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </section><!--/.welcome-hero-->
+  <!--welcome-hero end -->
+
+  <!--list-topics start -->
+  <section id="list-topics" class="list-topics">
+    <div class="container">
+      <div class="list-topics-content">
+        <ul>
+          <li>
+            <div class="single-list-topics-content">
+              <div class="single-list-topics-icon">
+                <i class="flaticon-building"></i>
+              </div>
+              <h2><a href="#">Villa</a></h2>
+              <p>34 listings</p>
+            </div>
+          </li>
+          <li>
+            <div class="single-list-topics-content">
+              <div class="single-list-topics-icon">
+                <i class="flaticon-building"></i>
+              </div>
+              <h2><a href="#">Apartment</a></h2>
+              <p>126 listings</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div><!--/.container-->
+
+  </section><!--/.list-topics-->
+  <!--list-topics end-->
+
+  <!--explore start -->
+  <section id="explore" class="explore">
+    <div class="container">
+      <div class="section-header">
+        <h2>explore</h2>
+        <p>Explore villas and apartments for sale, rent or leasing.</p>
+      </div><!--/.section-header-->
+      <div class="explore-content">
+        <div class="row">
+          <!---------------->
+          <!---------------->
+          <% listings.forEach((listing, index)=> { %>
+          <div class=" col-md-4 col-sm-6">
+            <div class="single-explore-item">
+              <div class="single-explore-img">
+                <img src="<%= listing.photos[index] %>" alt="explore image">
+                <div class="single-explore-img-info">
+                  <button onclick="window.location.href='#'">trending</button>
+                  <div class="single-explore-image-icon-box">
+                    <ul>
+                      <li>
+                        <div class="single-explore-image-icon">
+                          <i class="fa fa-arrows-alt"></i>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="single-explore-image-icon">
+                          <i class="fa fa-bookmark-o"></i>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="single-explore-txt bg-theme-1">
+                <h2><a href="#"><%= listing.type %> at <%= listing.location %></a></h2>
+                <p class="explore-rating-price">
+                  <a href="#"><%= listing.type %></a>
+                  <span class="explore-price-box">
+                    <span class="explore-price"><%= listing.price %> BHD</span>
+                  </span>
+                  <a href="#"><%= listing.location %></a>
+                </p>
+                <div class="explore-person">
+                  <div class="row">
+                    
+                    <div class="col-sm-10">
+                      <p>
+                        <%= listing.description %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="explore-open-close-part">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <button class="close-btn" onclick="window.location.href='#'">Show Details</button>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="explore-map-icon">
+                        <a href="https://www.google.com/maps/search/?api=1&query=<%= listing.location %>"><i data-feather="map-pin"></i></a>
+                        <a href="tel:+973<%= listing.uid.phone %>"><i data-feather="phone"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          <!---------------->
+          <!---------------->
+        </div>
+      </div>
+    </div><!--/.container-->
+
+  </section><!--/.explore-->
+  <!--explore end -->
