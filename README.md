@@ -111,7 +111,9 @@ _More screenshots to be added soon!_
 
 ## Roadmap
 
-- [ ] User Registration & Login
+- [x] User Registration
+- [x] User Login
+- [ ] User Profile
 - [ ] Listing Adding & Updating
 - [ ] Commenting
   - [ ] Agent/Company answers the question
