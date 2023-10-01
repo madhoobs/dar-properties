@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 router.get('/profile', userCtrl.profile_show_get)
 router.get('/profile/edit',userCtrl.profile_edit_get)
-// router.post('/profile/edit',upload.single('avatar'), userCtrl.profile_edit_post)
+router.post('/profile/edit', userCtrl.profile_edit_post)
 
 module.exports = router
 

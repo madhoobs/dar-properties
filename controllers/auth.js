@@ -85,6 +85,7 @@ exports.profile_show_get = (req, res) => {
 exports.profile_edit_get = (req, res) => {
   User.findById(req.query.id)
     .then((user) => {
+      console.log(user)
       res.render('profile/edit', { user })
     })
     .catch((err) => {
@@ -94,8 +95,8 @@ exports.profile_edit_get = (req, res) => {
 
 
 
-exports.auth_update_post = async (req, res) => {
-  const userId = req.user._id
+exports.profile_edit_post = async (req, res) => {
+  const userId = req.body.id
   const { firstName , lastName,companyName,companyCR,city,address,phone,email,password} =
     req.body
 
@@ -117,7 +118,7 @@ exports.auth_update_post = async (req, res) => {
         updatedUser.password = hashedPassword
       }
       await User.findByIdAndUpdate(userId, updatedUser)
-      res.redirect("/auth/detail")
+      res.redirect("/profile")
     } catch (err) {
       console.log(err)
       res.send("Error updating user.")
