@@ -1,0 +1,182 @@
+
+
+<!-- <script src="/JS/type.js"></script> -->
+<h1> Edit Profile </h1>
+
+<form method="POST" action="/profile/edit">
+
+    <div class="col-md-6"id="firstName">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" name="firstName" class="form-control" value="<%= user.firstName %>" >
+    </div>
+
+    <div class="col-md-6" id="lastName">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" name="lastName" class="form-control" value="<%= user.lastName %>">
+    </div>
+
+    <div class="col-md-6" id="companyName">
+        <label for="companyName" class="form-label">Company Name</label>
+        <input type="text" name="companyName" class="form-control" value="<%= user.companyName %>">
+    </div>
+
+    <div class="col-md-6" id="companyCR">
+        <label for="companyCR" class="form-label">Commercial Registration</label>
+        <!-- <span class="input-group-text">CR</span> -->
+        <input type="text" name="companyCR" class="form-control" placeholder="CR" value="<%= user.companyCR %> ">
+    </div>
+
+<div id="Address" >
+    <div class="col-md-4">
+        <label for="city" class="form-label">City</label>
+        <select id="city" name="city" class="form-select" value="<%= user.city %>">
+        <option selected disabled>Choose Your City</option>
+        <option>A'ali</option>
+        <option>Abu Saiba'a </option>
+        <option>Adhari </option>
+        <option>Adliya </option>
+        <option>Al Areen </option>
+        <option>Al Eker </option>
+        <option>Al Hajar </option>
+        <option>Al Khamis </option>
+        <option>Al Naim </option>
+        <option>Al Qurayyah </option>
+        <option>Amwaj Islands </option>
+        <option>Arad </option>
+        <option>Askar </option>
+        <option>Awali </option>
+        <option>Bahrain Bay </option>
+        <option>Bahrain Harbor </option>
+        <option>Bani Jamrah </option>
+        <option>Barbar </option>
+        <option>Bilad Al Qadeem </option>
+        <option>Bu Asheera </option>
+        <option>Bu Ghazal </option>
+        <option>Bu Kowarah </option>
+        <option>Budaiya </option>
+        <option>Buquwa </option>
+        <option>Burhama </option>
+        <option>Buri </option>
+        <option>Busaiteen </option>
+        <option>Daih </option>
+        <option>Dair </option>
+        <option>Dimistan </option>
+        <option>Danat Albahrain </option>
+        <option>Dar Kulaib </option>
+        <option>Dilmunia </option>
+        <option>Diplomatic Area </option>
+        <option>Diraz </option>
+        <option>Diyar Al Muharraq </option>
+        <option>Durrat Al Bahrain </option>
+        <option>East Riffa </option>
+        <option>Galali </option>
+        <option>Ghuraifa </option>
+        <option>Guful </option>
+        <option>Hala </option>
+        <option>Halat Abdulsaleh </option>
+        <option>Hamad Town </option>
+        <option>Hamala </option>
+        <option>Hawrat A'ali </option>
+        <option>Hawrat Sanad </option>
+        <option>Hidd </option>
+        <option>Hoora </option>
+        <option>Isa Town </option>
+        <option>Jablat Habshi </option>
+        <option>Janabiyah </option>
+        <option>Jannusan </option>
+        <option>Jari Alshaikh </option>
+        <option>Jasrah </option>
+        <option>Jaw </option>
+        <option>Jid al haj </option>
+        <option>Jid Ali </option>
+        <option>Jidhafs </option>
+        <option>Juffair </option>
+        <option>Jurdab </option>
+        <option>Karbabad </option>
+        <option>Karranah </option>
+        <option>Karzakan </option>
+        <option>Khalifa town </option>
+        <option>Lawzi </option>
+        <option>Maameer </option>
+        <option>Malkiya </option>
+        <option>Manama </option>
+        <option>Maqaba </option>
+        <option>Maqshaa </option>
+        <option>Marassi Al Bahrain </option>
+        <option>Markh </option>
+        <option>Muharraq </option>
+        <option>Musala </option>
+        <option>Nabih Saleh </option>
+        <option>Northern Sehla </option>
+        <option>Nuranah </option>
+        <option>Nuwaidrat </option>
+        <option>Qadam </option>
+        <option>Qudaybiyah </option>
+        <option>Ra's Hayyan </option>
+        <option>Ras Rumman </option>
+        <option>Ras Zuwaid </option>
+        <option>Reef Island </option>
+        <option>Riffa </option>
+        <option>Riffa Alhajiyat </option>
+        <option>Riffa Al Hunainiyah </option>
+        <option>Riffa Alshamali </option>
+        <option>Riffa Views </option>
+        <option>Sadad </option>
+        <option>Safra </option>
+        <option>Salhiya </option>
+        <option>Salmabad </option>
+        <option>Salman Town </option>
+        <option>Salmaniya </option>
+        <option>Samaheej </option>
+        <option>Sanabis </option>
+        <option>Sanad </option>
+        <option>Saar </option>
+        <option>Saraya 2 </option>
+        <option>Sayah </option>
+        <option>Seef District </option>
+        <option>Shahrakan </option>
+        <option>Shakhura </option>
+        <option>Sitra </option>
+        <option>Sitra industrial </option>
+        <option>South sehla </option>
+        <option>Sugaya </option>
+        <option>Tashan </option>
+        <option>Tubli </option>
+        <option>Um alhasam </option>
+        <option>Wadi Al Sail </option>
+        <option>West Riffa </option>
+        <option>Zallaq </option>
+        <option>Zayed Town </option>
+        <option>Zinj </option>
+
+        </select>
+    </div>
+
+    <div class="col-12">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" name="address" placeholder="Building, Road, Block" value="<%= user.address %>">
+    </div>
+
+    </div>
+
+    <div class="col-md-6"  id="phone">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="number" name="phone" class="form-control" value="<%= user.phone %>">
+        </div>
+    
+    
+    <div class="col-md-6" id="inputEmail">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" value="<%= user.email %>" >
+    </div>
+
+
+    <input type="hidden" name="id" value="<%= user._id %>">
+
+    <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+
+    <td> <a href="/profile/changepassword?id=<%= user._id %>"> change password </a></td>
+
+</form>
