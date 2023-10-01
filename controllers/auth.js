@@ -11,7 +11,6 @@ exports.auth_signup_get = (req, res) => {
 }
 
 exports.auth_signup_post = (req, res) => {
-  console.log(req.body)
   if (req.body.password === req.body.confirmPassword) {
     let user = User(req.body)
 

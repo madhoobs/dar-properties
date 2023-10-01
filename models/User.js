@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 
 const userSchema = mongoose.Schema({
-  isSller: {
+  isSeller: {
     type: Boolean,
     default: false
   },
@@ -54,10 +54,8 @@ const userSchema = mongoose.Schema({
 })
 
 // Verif Password Method
-userSchema.methods.verifyPassword = function (inputPassword) {
-  console.log('inputPassword', inputPassword)
-  console.log('this.inputPassword', inputPassword)
-  return bcrypt.compareSync(inputPassword, this.inputPassword)
+userSchema.methods.verifyPassword = function (password) {
+  return bcrypt.compareSync(password, this.password)
 }
 
 const User = mongoose.model('User', userSchema)
