@@ -1,0 +1,25 @@
+#profile {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  #profile h1 {
+    text-align: center;
+  }
+  
+  #profile-info label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #profile-info input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  #save-profile {
+    display: block;
+    margin-top: 10px;
+  }
+  

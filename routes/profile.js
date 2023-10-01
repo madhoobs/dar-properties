@@ -1,5 +1,7 @@
 const express = require('express')
 const multer  = require('multer')
+const router = express.Router()
+router.use(express.urlencoded({ extended: true }))
 // const upload = multer({ dest: 'uploads/' })
 
 const storage = multer.diskStorage({
@@ -7,16 +9,16 @@ const storage = multer.diskStorage({
       cb(null, '/public/uploads')
     },
     filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-' + uniqueSuffix)
+        cb(null, file.fieldname + '' + Date.now() + '' + file.originalname)
     }
   })
-  
-  const upload = multer({ storage: storage })
+  var upload = multer({ storage: storage}).single('uploads')
 
-const app = express()
+  const userCtrl = require('../controllers/auth')
 
-app.get('/profile', upload.single('avatar'), )
+router.get('/profile', userCtrl.profile_show_get)
+router.get('/profile/edit',userCtrl.profile_edit_get)
+// router.post('/profile/edit',upload.single('avatar'), userCtrl.profile_edit_post)
 
-app.post('/profile', upload.single('avatar'), )
+module.exports = router
 
