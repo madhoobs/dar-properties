@@ -86,7 +86,7 @@
           <div class=" col-md-4 col-sm-6">
             <div class="single-explore-item">
               <div class="single-explore-img">
-                <img src="<%= listing.photos[index] %>" alt="explore image">
+                <img src="<%= listing.photos[0] %>" alt="explore image">
                 <div class="single-explore-img-info">
                   <button onclick="window.location.href='#'">trending</button>
                   <div class="single-explore-image-icon-box">
@@ -106,7 +106,7 @@
                 </div>
               </div>
               <div class="single-explore-txt bg-theme-1">
-                <h2><a href="#"><%= listing.type %> at <%= listing.location %></a></h2>
+                <h2><a href="/listing?id=<%= listing._id %>"><%= listing.type %> at <%= listing.location %></a></h2>
                 <p class="explore-rating-price">
                   <a href="#"><%= listing.type %></a>
                   <span class="explore-price-box">
@@ -127,7 +127,7 @@
                 <div class="explore-open-close-part">
                   <div class="row">
                     <div class="col-sm-5">
-                      <button class="close-btn" onclick="window.location.href='#'">Show Details</button>
+                      <button class="close-btn" onclick="window.location.href='/listing?id=<%= listing._id %>'">More Details</button>
                     </div>
                     <div class="col-sm-7">
                       <div class="explore-map-icon">

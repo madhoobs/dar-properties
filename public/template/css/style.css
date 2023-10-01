@@ -802,7 +802,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     transition:0.3s linear;
 }
 .subscription-input-group:hover .subscription-input-form{
-    box-shadow: 0 5px 20px rgba(21,19,19,.4);
+    box-shadow: 0 5px 20px rgba(21,19,19,.2);
 }
 /*custom-input-group*/
 

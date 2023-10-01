@@ -14,35 +14,35 @@
     <title>Dar Properties</title>
 
     <!-- For favicon png -->
-    <link rel="shortcut icon" type="image/icon" href="public/template/logo/favicon.png" />
+    <link rel="shortcut icon" type="image/icon" href="/template/logo/favicon.png" />
 
     <!--font-awesome.min.css-->
-    <link rel="stylesheet" href="public/template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/template/css/font-awesome.min.css">
 
     <!--linear icon css-->
-    <link rel="stylesheet" href="public/template/css/linearicons.css">
+    <link rel="stylesheet" href="/template/css/linearicons.css">
 
     <!--animate.css-->
-    <link rel="stylesheet" href="public/template/css/animate.css">
+    <link rel="stylesheet" href="/template/css/animate.css">
 
     <!--flaticon.css-->
-    <link rel="stylesheet" href="public/template/css/flaticon.css">
+    <link rel="stylesheet" href="/template/css/flaticon.css">
 
     <!--slick.css-->
-    <link rel="stylesheet" href="public/template/css/slick.css">
-    <link rel="stylesheet" href="public/template/css/slick-theme.css">
+    <link rel="stylesheet" href="/template/css/slick.css">
+    <link rel="stylesheet" href="/template/css/slick-theme.css">
 
     <!--bootstrap.min.css-->
-    <link rel="stylesheet" href="public/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/template/css/bootstrap.min.css">
 
     <!-- bootsnav -->
-    <link rel="stylesheet" href="public/template/css/bootsnav.css">
+    <link rel="stylesheet" href="/template/css/bootsnav.css">
 
     <!--style.css-->
-    <link rel="stylesheet" href="public/template/css/style.css">
+    <link rel="stylesheet" href="/template/css/style.css">
 
     <!--responsive.css-->
-    <link rel="stylesheet" href="public/template/css/responsive.css">
+    <link rel="stylesheet" href="/template/css/responsive.css">
 
 </head>
 
@@ -74,6 +74,12 @@
                                         <% } else { %>
                                             Welcome, <%= currentUser.firstName %>
                                                 <% } %>
+                            </li>
+                            <li class="header-top-contact">
+                                <a href="/profile">My Account</a>
+                            </li>
+                            <li class="header-top-contact">
+                                <a href="/auth/logout">Logout</a>
                             </li>
                             <% } else { %>
                                 <li class="header-top-contact">
@@ -113,9 +119,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" scroll active"><a href="/">home</a></li>
+                            <li><a href="/">home</a></li>
                             <li class="scroll"><a href="#explore">explore</a></li>
-                            <li class="scroll"><a href="#contact">contact</a></li>
+                            <% if(currentUser) { %>
+                                <li><a href="/listing/add">New Listing</a></li>
+                             <% } else { %>
+                                    <li class="scroll"><a href="#contact">contact</a></li>
+                            <% } %>
                         </ul><!--/.nav -->
                     </div><!-- /.navbar-collapse -->
                 </div><!--/.container-->
@@ -132,6 +142,7 @@
     <%- body  %>
 
     <!--subscription start -->
+    <% if(!currentUser) { %>
     <section id="contact" class="subscription">
         <div class="container">
             <div class="subscribe-title text-center">
@@ -157,6 +168,7 @@
         </div>
     
     </section><!--/subscription-->
+    <% } %>
     <!--subscription end -->
     
     <!--footer start-->
@@ -173,7 +185,6 @@
                         <ul class="footer-menu-item">
                             <li class="scroll"><a href="#explore">explore</a></li>
                             <li class="scroll"><a href="#contact">contact</a></li>
-                            <li class=" scroll"><a href="#contact">my account</a></li>
                         </ul><!--/.nav -->
                     </div>
                 </div>
@@ -210,31 +221,31 @@
 
 <!-- Include all js compiled plugins (below), or include individual files as needed -->
 
-<script src="public/template/js/jquery.js"></script>
+<script src="/template/js/jquery.js"></script>
 
 <!--modernizr.min.js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
 <!--bootstrap.min.js-->
-<script src="public/template/js/bootstrap.min.js"></script>
+<script src="/template/js/bootstrap.min.js"></script>
 
 <!-- bootsnav js -->
-<script src="public/template/js/bootsnav.js"></script>
+<script src="/template/js/bootsnav.js"></script>
 
 <!--feather.min.js-->
-<script src="public/template/js/feather.min.js"></script>
+<script src="/template/js/feather.min.js"></script>
 
 <!-- counter js -->
-<script src="public/template/js/jquery.counterup.min.js"></script>
-<script src="public/template/js/waypoints.min.js"></script>
+<script src="/template/js/jquery.counterup.min.js"></script>
+<script src="/template/js/waypoints.min.js"></script>
 
 <!--slick.min.js-->
-<script src="public/template/js/slick.min.js"></script>
+<script src="/template/js/slick.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
 <!--Custom JS-->
-<script src="public/template/js/custom.js"></script>
+<script src="/template/js/custom.js"></script>
 
 </body>
 

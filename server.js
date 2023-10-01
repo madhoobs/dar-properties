@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 
 // This is to encode the body response & use CSS
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static(__dirname + '/'))
+app.use(express.static(__dirname + '/public'))
 
 // Import Routes
 const authRouter = require('./routes/auth')

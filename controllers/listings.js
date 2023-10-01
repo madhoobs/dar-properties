@@ -28,7 +28,16 @@ exports.listing_add_post = (req, res) => {
 }
 
 // Showing details of a single listing
-exports.listing_details_get = (req, res) => {}
+exports.listing_details_get = (req, res) => {
+  Listing.findById(req.query.id)
+    .populate('uid')
+    .then((listing) => {
+      res.render('listing/detail', { listing })
+    })
+    .catch((err) => {
+      console.log('Please try again. ' + err)
+    })
+}
 
 // Updating an existing listing
 exports.listing_edit_get = (req, res) => {}
