@@ -61,7 +61,7 @@ exports.auth_logout_get = (req, res) => {
     if (err) {
       return next(err)
     }
-    res.redirect('/auth/login')
+    res.redirect('/')
   })
 }
 

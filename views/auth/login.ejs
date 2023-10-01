@@ -1,22 +1,36 @@
-<h1> Log In </h1>
 
-<form method="POST" action="/auth/login">
-
-<form class="row g-3">
-
-    <div class="col-md-6">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email">
-    </div>
-
-    <div class="col-md-6">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" name="password">
-    </div>
-
-    <br>
-
-    <div class="col-12">
-    <button type="submit" class="btn btn-primary"> Login</button>
-    </div>
-</form>
+        <!--subscription start -->
+            <section id="contact" class="subscription">
+                <div class="container">
+                    <div class="subscribe-title text-center">
+                        <h2>
+                            LOGIN
+                        </h2>
+                        <p>
+                            Login to an Existing Account
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="subscription-input-group">
+                                <form method="POST" action="/auth/login">
+                                    <input type="email" name="email" class="subscription-input-form" style="width: 100%; margin-top: 20px; " placeholder="Email">
+                                    <br>
+                                    <input type="password" name="password" class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="Password">
+                                    <br>
+                                    <button type="submit" class="welcome-hero-btn" style="width: 100%; margin-top: 20px;">
+                                        LOGIN
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subscribe-title text-center">
+                        <p>
+                            New to Dar Properties? <a href="/auth/signup">Register Here</a>
+                        </p>
+                    </div>
+                </div>
+        
+            </section><!--/subscription-->
+                <!--subscription end -->
