@@ -45,3 +45,33 @@ exports.listing_edit_post = (req, res) => {}
 
 // Deleting an existing listing
 exports.listing_delete_get = (req, res) => {}
+
+//serach listing
+exports.listing_search_post=(req,res)=>{
+  const type=req.body.type
+  const location=req.body.location
+  let condition={}
+  if(type){
+    condition.type=type
+  }
+  if(location){
+    condition.location=location
+  }
+  Listing.find(condition).then(listings=>{
+    res.render('listing/search', { listings })
+  })
+}
+
+//on click
+exports.listing_villa_get=(req,res)=>{
+  
+  Listing.find({type:'Villa'}).then(listings=>{
+    res.render('listing/search', { listings })
+  })
+}
+exports.listing_apartment_get=(req,res)=>{
+  
+  Listing.find({type:'Apartment'}).then(listings=>{
+    res.render('listing/search', { listings })
+  })
+}

@@ -118,3 +118,15 @@ exports.profile_edit_post = async (req, res) => {
       res.send("Error updating user.")
     }
 }
+//change password
+exports.profile_changePassword_get=(req,res)=>{
+  res.render('profile/changepassword')
+}
+exports.profile_changePassword_post=(req,res)=>{
+  if (req.body.newPassword === req.body.confirmPassword) {
+    res.send('hi')
+  }
+  else{
+    res.redirect('/profile/changepassword')
+  }
+}
