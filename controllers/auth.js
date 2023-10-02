@@ -30,7 +30,9 @@ exports.auth_signup_post = (req, res) => {
 
     let hash = bcrypt.hashSync(req.body.password, salt)
     user.password = hash
-user.profileImage = req.file.filename
+    if (req.file.filename){ 
+    user.profileImage = req.file.filename 
+    }
     user
       .save()
       .then(() => {
@@ -39,7 +41,7 @@ user.profileImage = req.file.filename
       .catch((err) => {
         res.send('Try Again')
         console.log(err)
-      })
+      }) 
   } else {
     res.redirect('/auth/signup')
     // Let's add a clear error message here
@@ -65,19 +67,13 @@ exports.auth_logout_get = (req, res) => {
 }
 
 exports.profile_show_get = (req, res) => {
-  User.find({ user: res.locals.currentUser })
-    .then((posts) => {
-      User.findById(req.body.id)
+      User.findById(req.query.id)
         .then((user) => {
-          res.render('profile/profile', { posts, user })
+          res.render('profile/profile', { user })
         })
         .catch((err) => {
           console.log(err)
         })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
 }
 
 //Get Edit profile Page
@@ -94,39 +90,31 @@ exports.profile_edit_get = (req, res) => {
 
 exports.profile_edit_post = async (req, res) => {
   const userId = req.body.id
-  const {
-    firstName,
-    lastName,
-    companyName,
-    companyCR,
-    city,
-    address,
-    phone,
-    email,
-    password
-  } = req.body
+  const { firstName , lastName,companyName,companyCR,city,address,phone,password} =
+    req.body
 
-  try {
-    let updatedUser = {
-      firstName,
-      lastName,
-      companyName,
-      companyCR,
-      city,
-      address,
-      phone,
-      email,
-      password
+    try {
+      let updatedUser = {
+        firstName,
+        lastName,
+        companyName,
+        companyCR,
+        city,
+        address,
+        phone,
+   
+      }
+      if (password) {
+        const salt = await bcrypt.genSalt(15)
+        const hashedPassword = await bcrypt.hash(password, salt)
+        updatedUser.password = hashedPassword
+      }
+      console.log(userId)
+      console.log(updatedUser)
+      await User.findByIdAndUpdate(userId, updatedUser)
+      res.redirect("/profile?id="+userId)
+    } catch (err) {
+      console.log(err)
+      res.send("Error updating user.")
     }
-    if (password) {
-      const salt = await bcrypt.genSalt(15)
-      const hashedPassword = await bcrypt.hash(password, salt)
-      updatedUser.password = hashedPassword
-    }
-    await User.findByIdAndUpdate(userId, updatedUser)
-    res.redirect('/profile')
-  } catch (err) {
-    console.log(err)
-    res.send('Error updating user.')
-  }
 }
