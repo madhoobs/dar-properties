@@ -8,7 +8,6 @@ let passport = require('../helper/ppConfig')
 
 const salt = 15
 
-
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/profilePic')
@@ -38,7 +37,7 @@ exports.auth_signup_post = (req, res) => {
         res.redirect('/')
       })
       .catch((err) => {
-        res.send("Try Again")
+        res.send('Try Again')
         console.log(err)
       })
   } else {
@@ -93,35 +92,41 @@ exports.profile_edit_get = (req, res) => {
     })
 }
 
-
-
 exports.profile_edit_post = async (req, res) => {
   const userId = req.body.id
-  const { firstName , lastName,companyName,companyCR,city,address,phone,email,password} =
-    req.body
+  const {
+    firstName,
+    lastName,
+    companyName,
+    companyCR,
+    city,
+    address,
+    phone,
+    email,
+    password
+  } = req.body
 
-    try {
-      let updatedUser = {
-        firstName,
-        lastName,
-        companyName,
-        companyCR,
-        city,
-        address,
-        phone,
-        email,
-        password
-      }
-      if (password) {
-        const salt = await bcrypt.genSalt(15)
-        const hashedPassword = await bcrypt.hash(password, salt)
-        updatedUser.password = hashedPassword
-      }
-      await User.findByIdAndUpdate(userId, updatedUser)
-      res.redirect("/profile")
-    } catch (err) {
-      console.log(err)
-      res.send("Error updating user.")
+  try {
+    let updatedUser = {
+      firstName,
+      lastName,
+      companyName,
+      companyCR,
+      city,
+      address,
+      phone,
+      email,
+      password
     }
+    if (password) {
+      const salt = await bcrypt.genSalt(15)
+      const hashedPassword = await bcrypt.hash(password, salt)
+      updatedUser.password = hashedPassword
+    }
+    await User.findByIdAndUpdate(userId, updatedUser)
+    res.redirect('/profile')
+  } catch (err) {
+    console.log(err)
+    res.send('Error updating user.')
   }
-
+}
