@@ -123,10 +123,24 @@ exports.profile_changePassword_get=(req,res)=>{
   res.render('profile/changepassword')
 }
 exports.profile_changePassword_post=(req,res)=>{
-  if (req.body.newPassword === req.body.confirmPassword) {
-    res.send('hi')
-  }
-  else{
-    res.redirect('/profile/changepassword')
-  }
+  
+    User.findById(req.body.user).then((user)=>{
+      const equals=bcrypt.compareSync(req.body.password, user.password)
+        if(!equals){
+          res.redirect('/profile/changepassword')
+        }
+        else if (req.body.newPassword === req.body.confirmPassword) {
+          let hash = bcrypt.hashSync(req.body.newPassword, salt)
+          user.password=hash
+          user.save().then(()=>{
+            res.redirect('/auth/login')
+          })
+        }
+        else{
+          res.redirect('/profile/changepassword')
+        }
+      
+      
+    }).catch(err=>{console.log(err)})
+  
 }
