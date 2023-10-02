@@ -31,124 +31,124 @@
         <label for="city" class="form-label">City</label>
         <select id="city" name="city" class="form-select" value="<%= user.city %>">
         <option selected disabled>Choose Your City</option>
-        <option>A'ali</option>
-        <option>Abu Saiba'a </option>
-        <option>Adhari </option>
-        <option>Adliya </option>
-        <option>Al Areen </option>
-        <option>Al Eker </option>
-        <option>Al Hajar </option>
-        <option>Al Khamis </option>
-        <option>Al Naim </option>
-        <option>Al Qurayyah </option>
-        <option>Amwaj Islands </option>
-        <option>Arad </option>
-        <option>Askar </option>
-        <option>Awali </option>
-        <option>Bahrain Bay </option>
-        <option>Bahrain Harbor </option>
-        <option>Bani Jamrah </option>
-        <option>Barbar </option>
-        <option>Bilad Al Qadeem </option>
-        <option>Bu Asheera </option>
-        <option>Bu Ghazal </option>
-        <option>Bu Kowarah </option>
-        <option>Budaiya </option>
-        <option>Buquwa </option>
-        <option>Burhama </option>
-        <option>Buri </option>
-        <option>Busaiteen </option>
-        <option>Daih </option>
-        <option>Dair </option>
-        <option>Dimistan </option>
-        <option>Danat Albahrain </option>
-        <option>Dar Kulaib </option>
-        <option>Dilmunia </option>
-        <option>Diplomatic Area </option>
-        <option>Diraz </option>
-        <option>Diyar Al Muharraq </option>
-        <option>Durrat Al Bahrain </option>
-        <option>East Riffa </option>
-        <option>Galali </option>
-        <option>Ghuraifa </option>
-        <option>Guful </option>
-        <option>Hala </option>
-        <option>Halat Abdulsaleh </option>
-        <option>Hamad Town </option>
-        <option>Hamala </option>
-        <option>Hawrat A'ali </option>
-        <option>Hawrat Sanad </option>
-        <option>Hidd </option>
-        <option>Hoora </option>
-        <option>Isa Town </option>
-        <option>Jablat Habshi </option>
-        <option>Janabiyah </option>
-        <option>Jannusan </option>
-        <option>Jari Alshaikh </option>
-        <option>Jasrah </option>
-        <option>Jaw </option>
-        <option>Jid al haj </option>
-        <option>Jid Ali </option>
-        <option>Jidhafs </option>
-        <option>Juffair </option>
-        <option>Jurdab </option>
-        <option>Karbabad </option>
-        <option>Karranah </option>
-        <option>Karzakan </option>
-        <option>Khalifa town </option>
-        <option>Lawzi </option>
-        <option>Maameer </option>
-        <option>Malkiya </option>
-        <option>Manama </option>
-        <option>Maqaba </option>
-        <option>Maqshaa </option>
-        <option>Marassi Al Bahrain </option>
-        <option>Markh </option>
-        <option>Muharraq </option>
-        <option>Musala </option>
-        <option>Nabih Saleh </option>
-        <option>Northern Sehla </option>
-        <option>Nuranah </option>
-        <option>Nuwaidrat </option>
-        <option>Qadam </option>
-        <option>Qudaybiyah </option>
-        <option>Ra's Hayyan </option>
-        <option>Ras Rumman </option>
-        <option>Ras Zuwaid </option>
-        <option>Reef Island </option>
-        <option>Riffa </option>
-        <option>Riffa Alhajiyat </option>
-        <option>Riffa Al Hunainiyah </option>
-        <option>Riffa Alshamali </option>
-        <option>Riffa Views </option>
-        <option>Sadad </option>
-        <option>Safra </option>
-        <option>Salhiya </option>
-        <option>Salmabad </option>
-        <option>Salman Town </option>
-        <option>Salmaniya </option>
-        <option>Samaheej </option>
-        <option>Sanabis </option>
-        <option>Sanad </option>
-        <option>Saar </option>
-        <option>Saraya 2 </option>
-        <option>Sayah </option>
-        <option>Seef District </option>
-        <option>Shahrakan </option>
-        <option>Shakhura </option>
-        <option>Sitra </option>
-        <option>Sitra industrial </option>
-        <option>South sehla </option>
-        <option>Sugaya </option>
-        <option>Tashan </option>
-        <option>Tubli </option>
-        <option>Um alhasam </option>
-        <option>Wadi Al Sail </option>
-        <option>West Riffa </option>
-        <option>Zallaq </option>
-        <option>Zayed Town </option>
-        <option>Zinj </option>
-
+        <option disabled>Choose Your City</option>
+        <option <% if (user.city = "A'ali") { %> selected <% } %> >A'ali</option>
+        <option <% if (user.city = "Abu Saiba'a") { %> selected <% } %> >Abu Saiba'a </option>
+        <option <% if (user.city = "Adhari") { %> selected <% } %> >Adhari </option>
+        <option <% if (user.city = "Adliya") { %> selected <% } %> >Adliya </option>
+        <option <% if (user.city = "Al Areen") { %> selected <% } %> >Al Areen </option>
+        <option <% if (user.city = "Al Eker") { %> selected <% } %> >Al Eker </option>
+        <option <% if (user.city = "Al Hajar") { %> selected <% } %> >Al Hajar </option>
+        <option <% if (user.city = "Al Khamis") { %> selected <% } %> >Al Khamis </option>
+        <option <% if (user.city = "Al Naim") { %> selected <% } %> >Al Naim </option>
+        <option <% if (user.city = "Al Qurayyah") { %> selected <% } %> >Al Qurayyah </option>
+        <option <% if (user.city = "Amwaj Islands") { %> selected <% } %> >Amwaj Islands </option>
+        <option <% if (user.city = "Arad") { %> selected <% } %> >Arad </option>
+        <option <% if (user.city = "Askar") { %> selected <% } %> >Askar </option>
+        <option <% if (user.city = "Awali") { %> selected <% } %> >Awali </option>
+        <option <% if (user.city = "Bahrain Bay") { %> selected <% } %> >Bahrain Bay </option>
+        <option <% if (user.city = "Bahrain Harbor") { %> selected <% } %> >Bahrain Harbor </option>
+        <option <% if (user.city = "Bani Jamrah") { %> selected <% } %> >Bani Jamrah </option>
+        <option <% if (user.city = "Barbar") { %> selected <% } %> >Barbar </option>
+        <option <% if (user.city = "Bilad Al Qadeem") { %> selected <% } %> >Bilad Al Qadeem </option>
+        <option <% if (user.city = "A'Bu Asheera") { %> selected <% } %> >Bu Asheera </option>
+        <option <% if (user.city = "A'Bu Ghazal") { %> selected <% } %> >Bu Ghazal </option>
+        <option <% if (user.city = "A'Bu Kowarah") { %> selected <% } %> >Bu Kowarah </option>
+        <option <% if (user.city = "A'Budaiya") { %> selected <% } %> >Budaiya </option>
+        <option <% if (user.city = "A'Buquwa") { %> selected <% } %> >Buquwa </option>
+        <option <% if (user.city = "A'Burhama") { %> selected <% } %> >Burhama </option>
+        <option <% if (user.city = "A'Buri") { %> selected <% } %> >Buri </option>
+        <option <% if (user.city = "A'Busaiteen") { %> selected <% } %> >Busaiteen </option>
+        <option <% if (user.city = "A'Daih") { %> selected <% } %> >Daih </option>
+        <option <% if (user.city = "A'Dair") { %> selected <% } %> >Dair </option>
+        <option <% if (user.city = "A'Dimistan") { %> selected <% } %> >Dimistan </option>
+        <option <% if (user.city = "A'Danat Albahrain") { %> selected <% } %> >Danat Albahrain </option>
+        <option <% if (user.city = "Dar Kulaib") { %> selected <% } %> >Dar Kulaib </option>
+        <option <% if (user.city = "Dilmunia") { %> selected <% } %> >Dilmunia </option>
+        <option <% if (user.city = "Diplomatic Area") { %> selected <% } %> >Diplomatic Area </option>
+        <option <% if (user.city = "Diraz") { %> selected <% } %> >Diraz </option>
+        <option <% if (user.city = "Diyar Al Muharraq") { %> selected <% } %> >Diyar Al Muharraq </option>
+        <option <% if (user.city = "Durrat Al Bahrain") { %> selected <% } %> >Durrat Al Bahrain </option>
+        <option <% if (user.city = "East Riffa") { %> selected <% } %> >East Riffa </option>
+        <option <% if (user.city = "Galali") { %> selected <% } %> >Galali </option>
+        <option <% if (user.city = "Ghuraifa") { %> selected <% } %> >Ghuraifa </option>
+        <option <% if (user.city = "Guful") { %> selected <% } %> >Guful </option>
+        <option <% if (user.city = "Hala") { %> selected <% } %> >Hala </option>
+        <option <% if (user.city = "Halat Abdulsaleh") { %> selected <% } %> >Halat Abdulsaleh </option>
+        <option <% if (user.city = "Hamad Town") { %> selected <% } %> >Hamad Town </option>
+        <option <% if (user.city = "Hamala") { %> selected <% } %> >Hamala </option>
+        <option <% if (user.city = "Hawrat A'ali") { %> selected <% } %> >Hawrat A'ali </option>
+        <option <% if (user.city = "Hawrat Sanad") { %> selected <% } %> >Hawrat Sanad </option>
+        <option <% if (user.city = "Hidd") { %> selected <% } %> >Hidd </option>
+        <option <% if (user.city = "Hoora") { %> selected <% } %> >Hoora </option>
+        <option <% if (user.city = "Isa Town") { %> selected <% } %> >Isa Town </option>
+        <option <% if (user.city = "Jablat Habshi") { %> selected <% } %> >Jablat Habshi </option>
+        <option <% if (user.city = "Janabiyah") { %> selected <% } %> >Janabiyah </option>
+        <option <% if (user.city = "Jannusan") { %> selected <% } %> >Jannusan </option>
+        <option <% if (user.city = "Jari Alshaikh") { %> selected <% } %> >Jari Alshaikh </option>
+        <option <% if (user.city = "Jasrah") { %> selected <% } %> >Jasrah </option>
+        <option <% if (user.city = "Jaw") { %> selected <% } %> >Jaw </option>
+        <option <% if (user.city = "Jid al haj") { %> selected <% } %> >Jid al haj </option>
+        <option <% if (user.city = "Jid Ali") { %> selected <% } %> >Jid Ali </option>
+        <option <% if (user.city = "Jidhafs") { %> selected <% } %> >Jidhafs </option>
+        <option <% if (user.city = "Juffair") { %> selected <% } %> >Juffair </option>
+        <option <% if (user.city = "Jurdab") { %> selected <% } %> >Jurdab </option>
+        <option <% if (user.city = "Karbabad") { %> selected <% } %> >Karbabad </option>
+        <option <% if (user.city = "Karranah") { %> selected <% } %> >Karranah </option>
+        <option <% if (user.city = "Karzakan") { %> selected <% } %> >Karzakan </option>
+        <option <% if (user.city = "Khalifa town") { %> selected <% } %> >Khalifa town </option>
+        <option <% if (user.city = "Lawzi") { %> selected <% } %> >Lawzi </option>
+        <option <% if (user.city = "Maameer") { %> selected <% } %> >Maameer </option>
+        <option <% if (user.city = "Malkiya") { %> selected <% } %> >Malkiya </option>
+        <option <% if (user.city = "Manama") { %> selected <% } %> >Manama </option>
+        <option <% if (user.city = "Maqaba") { %> selected <% } %> >Maqaba </option>
+        <option <% if (user.city = "Maqshaa") { %> selected <% } %> >Maqshaa </option>
+        <option <% if (user.city = "Marassi Al Bahrain") { %> selected <% } %> >Marassi Al Bahrain </option>
+        <option <% if (user.city = "Markh") { %> selected <% } %> >Markh </option>
+        <option <% if (user.city = "Muharraq") { %> selected <% } %> >Muharraq </option>
+        <option <% if (user.city = "Musala") { %> selected <% } %> >Musala </option>
+        <option <% if (user.city = "Nabih Saleh") { %> selected <% } %> >Nabih Saleh </option>
+        <option <% if (user.city = "Northern Sehla") { %> selected <% } %> >Northern Sehla </option>
+        <option <% if (user.city = "Nuranah") { %> selected <% } %> >Nuranah </option>
+        <option <% if (user.city = "Nuwaidrat") { %> selected <% } %> >Nuwaidrat </option>
+        <option <% if (user.city = "Qadam") { %> selected <% } %> >Qadam </option>
+        <option <% if (user.city = "Qudaybiyah") { %> selected <% } %> >Qudaybiyah </option>
+        <option <% if (user.city = "Ras Hayyan") { %> selected <% } %> >Ras Hayyan </option>
+        <option <% if (user.city = "Ras Rumman") { %> selected <% } %> >Ras Rumman </option>
+        <option <% if (user.city = "Ras Zuwaid") { %> selected <% } %> >Ras Zuwaid </option>
+        <option <% if (user.city = "Reef Island") { %> selected <% } %> >Reef Island </option>
+        <option <% if (user.city = "Riffa") { %> selected <% } %> >Riffa </option>
+        <option <% if (user.city = "Riffa Alhajiyat") { %> selected <% } %> >Riffa Alhajiyat </option>
+        <option <% if (user.city = "Riffa Al Hunainiyah") { %> selected <% } %> >Riffa Al Hunainiyah </option>
+        <option <% if (user.city = "Riffa Alshamali") { %> selected <% } %> >Riffa Alshamali </option>
+        <option <% if (user.city = "Riffa Views") { %> selected <% } %> >Riffa Views </option>
+        <option <% if (user.city = "Sadad") { %> selected <% } %> >Sadad </option>
+        <option <% if (user.city = "Safra") { %> selected <% } %> >Safra </option>
+        <option <% if (user.city = "Salhiya") { %> selected <% } %> >Salhiya </option>
+        <option <% if (user.city = "Salmabad") { %> selected <% } %> >Salmabad </option>
+        <option <% if (user.city = "Salman Town") { %> selected <% } %> >Salman Town </option>
+        <option <% if (user.city = "Salmaniya") { %> selected <% } %> >Salmaniya </option>
+        <option <% if (user.city = "Samaheej") { %> selected <% } %> >Samaheej </option>
+        <option <% if (user.city = "Sanabis") { %> selected <% } %> >Sanabis </option>
+        <option <% if (user.city = "Sanad") { %> selected <% } %> >Sanad </option>
+        <option <% if (user.city = "Saar") { %> selected <% } %> >Saar </option>
+        <option <% if (user.city = "Saraya 2") { %> selected <% } %> >Saraya 2 </option>
+        <option <% if (user.city = "Sayah") { %> selected <% } %> >Sayah </option>
+        <option <% if (user.city = "Seef District") { %> selected <% } %> >Seef District </option>
+        <option <% if (user.city = "Shahrakan") { %> selected <% } %> >Shahrakan </option>
+        <option <% if (user.city = "Shakhura") { %> selected <% } %> >Shakhura </option>
+        <option <% if (user.city = "Sitra") { %> selected <% } %> >Sitra </option>
+        <option <% if (user.city = "Sitra industrial") { %> selected <% } %> >Sitra industrial </option>
+        <option <% if (user.city = "South sehla") { %> selected <% } %> >South sehla </option>
+        <option <% if (user.city = "Sugaya") { %> selected <% } %> >Sugaya </option>
+        <option <% if (user.city = "Tashan") { %> selected <% } %> >Tashan </option>
+        <option <% if (user.city = "Tubli") { %> selected <% } %> >Tubli </option>
+        <option <% if (user.city = "Um alhasam") { %> selected <% } %> >Um alhasam </option>
+        <option <% if (user.city = "Wadi Al Sail") { %> selected <% } %> >Wadi Al Sail </option>
+        <option <% if (user.city = "West Riffa") { %> selected <% } %> >West Riffa </option>
+        <option <% if (user.city = "Zallaq") { %> selected <% } %> >Zallaq </option>
+        <option <% if (user.city = "Zayed Town") { %> selected <% } %> >Zayed Town </option>
+        <option <% if (user.city = "Zinj") { %> selected <% } %> >Zinj </option>
         </select>
     </div>
 
