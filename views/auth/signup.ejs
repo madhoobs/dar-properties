@@ -1,21 +1,20 @@
 <script src="/JS/type.js"></script>
 
-<h1> Create a new Account </h1>
-
 <form method="POST" action="/auth/signup" enctype="multipart/form-data">
 <!--subscription start -->
 <section id="contact" class="subscription">
     <div class="container">
         <div class="subscribe-title text-center">
-            <h2>
-                REGISTER
-            </h2>
             <p>
                 Welcome to Dar Properties!
             </p>
-                <p>
-                    Already have an account? <a href="/auth/login">Login Here</a>
-                </p>
+            <br>
+            <h2>
+                Create a New Account
+            </h2>
+            <p>
+                Already have an account? <a href="/auth/login">Login Here</a>
+            </p>
         </div>
         <div class="row">
             <div class="col-sm-12">
@@ -30,6 +29,11 @@
             <option id="Agent" value="true"> Agent </option>
             <option id="Customer" value="false"> Customer </option>
         </select>
+        </div>
+
+        <div class="col-md-12">
+            <label class="form-label"> Upload profile picture</label>
+            <input type="file" name="profileImage" accept="image/*">
         </div>
         
     <div class="col-md-12" id="firstName">
@@ -47,12 +51,12 @@
         <input type="text" name="companyName"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" >
     </div>
 
-    <div class="col-md-6" id="companyCR">
+    <div class="col-md-4" id="companyCR">
         <label for="companyCR" class="form-label">Commercial Registration</label>
         <input type="text" name="companyCR"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="CR Number">
     </div>
 
-<div id="Address" >
+<div id="Address" class="col-md-4">
     <div class="col-md-4">
         <label for="city" class="form-label">City</label>
         <select id="city" name="city" class="form-select">
@@ -178,7 +182,7 @@
         </select>
     </div>
 
-    <div class="col-12">
+    <div class="col-md-4">
         <label for="address" class="form-label">Address</label>
         <input type="text" class="form-control" name="address" placeholder="Building, Road, Block">
     </div>
@@ -205,10 +209,6 @@
         <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input type="password" name="confirmPassword" class="form-control" >
         </div>
-     <div> 
-        <label class="form-label"> Upload profile picture</label>
-        <input type="file" name="profileImage" accept="image/*">
-     </div>
 
     <div class="col-md-6">
     <div class="form-check">
@@ -218,7 +218,7 @@
         </label>
     </div>
     </div>
-    <div class="col-12">
+    <div class="col-md-12">
     <input type="submit" name="Sign Up" class="btn btn-primary"></input>
     </div>
 </form>
