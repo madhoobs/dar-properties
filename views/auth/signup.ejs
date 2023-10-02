@@ -1,9 +1,23 @@
-<script src="/JS/type.js"></script>
-<h1> Create a new Account </h1>
-
+<!--subscription start -->
+<section id="contact" class="subscription">
+    <div class="container">
+        <div class="subscribe-title text-center">
+            <h2>
+                REGISTER
+            </h2>
+            <p>
+                Welcome to Dar Properties!
+            </p>
+                <p>
+                    Already have an account? <a href="/auth/login">Login Here</a>
+                </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="subscription-input-group">
 <form method="POST" action="/auth/signup">
 
-    <div class="col-md-4">
+    <div class="col-md-2">
         <label for="type" class="form-label">Type</label>
         <select id="type" name="isSeller" class="form-select" onchange="company()">
             <option selected disabled>User Type</option>
@@ -13,25 +27,23 @@
         </select>
         </div>
 
-    <div class="col-md-6"id="firstName">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" name="firstName" class="form-control" >
-    </div>
+        <input type="text" name="firstName" class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="Your First Name">
 
-    <div class="col-md-6" id="lastName">
+    <div class="col-md-12" id="lastName">
         <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" name="lastName" class="form-control">
+        <input type="text" name="lastName"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="Your Last Name">
     </div>
 
-    <div class="col-md-6" id="companyName">
+    <div class="col-md-12" id="companyName">
         <label for="companyName" class="form-label">Company Name</label>
-        <input type="text" name="companyName" class="form-control" >
+        <input type="text" name="companyName"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" >
     </div>
 
     <div class="col-md-6" id="companyCR">
         <label for="companyCR" class="form-label">Commercial Registration</label>
         <!-- <span class="input-group-text">CR</span> -->
-        <input type="text" name="companyCR" class="form-control" placeholder="CR">
+        <input type="text" name="companyCR"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="CR Number">
     </div>
 
 <div id="Address" >
@@ -201,3 +213,10 @@
     <button type="submit" class="btn btn-primary">Sign Up</button>
     </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+
+</section><!--/subscription-->
+<!--subscription end -->
