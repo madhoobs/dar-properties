@@ -35,12 +35,12 @@ const userSchema = mongoose.Schema({
     type: String
   },
 
-  city : {
-    type : String
+  city: {
+    type: String
   },
 
-  address : {
-type: String
+  address: {
+    type: String
   },
 
   phone: {

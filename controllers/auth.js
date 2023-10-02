@@ -8,7 +8,6 @@ let passport = require('../helper/ppConfig')
 
 const salt = 15
 
-
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/data')
@@ -40,7 +39,7 @@ exports.auth_signup_post = (req, res) => {
         res.redirect('/')
       })
       .catch((err) => {
-        res.send("Try Again")
+        res.send('Try Again')
         console.log(err)
       }) 
   } else {
@@ -89,8 +88,6 @@ exports.profile_edit_get = (req, res) => {
     })
 }
 
-
-
 exports.profile_edit_post = async (req, res) => {
   const userId = req.body.id
   const { firstName , lastName,companyName,companyCR,city,address,phone,password} =
@@ -120,5 +117,5 @@ exports.profile_edit_post = async (req, res) => {
       console.log(err)
       res.send("Error updating user.")
     }
-  }
-
+   
+}

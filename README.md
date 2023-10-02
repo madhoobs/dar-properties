@@ -43,26 +43,22 @@ Real Estate Listings Website
 
 ## About The Project
 
-[![Dar Properties Screen Shot][product-screenshot]]
+![Dar Properties Screen Shot][product-screenshot]
 <br>
 Dar Properties is a real estate listings app for buying and renting properties locally.
 <br>
 This project is done for the second required project for General Assembly's Software Engineering Immersive course.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
-- ![JavaScript][JavaScript]
-- ![HTML][HTML]
-- ![CSS][CSS]
-- ![Express][Express]
+- ![JavaScript]
+- ![HTML]
+- ![CSS]
+- ![Express]
 - [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-- ![Node.js][Node.js]
-- ![mongoDB][mongoDB]
+- ![Node.js]
+- ![mongoDB]
 - [![Passport][Passport]][Passport-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -92,31 +88,33 @@ Follow the instructions below for setting up the project locally.
    nodemon test
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- USAGE EXAMPLES -->
 
 ## Database Design
 
-[ERD Design on Lucid](https://lucid.app/lucidchart/d5fd8029-7a1b-4e68-8a25-9f4210caaa0b/edit?viewport_loc=-654%2C-385%2C2282%2C1274%2C0_0&invitationId=inv_d4fec947-45ef-49fa-bc79-3b29c4056f9c)
-_ERD Screenshot_
+![ERD][erd-screenshot]
+
+- [ERD Design on Lucid](https://lucid.app/lucidchart/d5fd8029-7a1b-4e68-8a25-9f4210caaa0b/edit?viewport_loc=-654%2C-385%2C2282%2C1274%2C0_0&invitationId=inv_d4fec947-45ef-49fa-bc79-3b29c4056f9c)
 
 ## Usage
 
 _More screenshots to be added soon!_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] User Registration & Login
-- [ ] Listing Adding & Updating
-- [ ] Commenting
+- [x] Homepage
+- [x] User Registration
+- [x] User Login
+- [x] User View Profile
+- [ ] User Edit Profile
+- [x] Listing Add
+- [x] Listing View
+- [ ] Listing Edit
+- [ ] Listing Delete
+- [x] User Asking Question (Comment Feature)
   - [ ] Agent/Company answers the question
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
@@ -128,19 +126,14 @@ _More screenshots to be added soon!_
   <br>
 - Zainab Sameer - zainabsameer197@gmail.com
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments & Credits
 
-- [Lucid.app](https://lucid.app)
-- [Trello](https://trello.com/b/PdE3gmsY/project-2)
-- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
-- [Best README Template](https://github.com/othneildrew/Best-README-Template)
-- [Homepage Template by Themesine](https://www.themesine.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- ERD: [Lucid.app](https://lucid.app)
+- Tasks Workspace: [Trello](https://trello.com/b/PdE3gmsY/project-2)
+- README.md Template: [Best README Template](https://github.com/othneildrew/Best-README-Template)
+- Homepage Template: [Themesine](https://www.themesine.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -154,7 +147,8 @@ _More screenshots to be added soon!_
 [linkedin-husain]: https://www.linkedin.com/in/husainmatar
 [linkedin-zainab-shield]: https://img.shields.io/badge/Zainab%20Sameer-0077b5?style=for-the-badge&logo=linkedin
 [linkedin-zainab]: https://www.linkedin.com/in/zainab-alkhadhar
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/img/dar-homepage-screenshot.png
+[erd-screenshot]: public/img/ERD.png
 [JavaScript]: https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=javascript
 [Express]: https://img.shields.io/badge/Express.js-35495E?style=for-the-badge&logo=express
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white

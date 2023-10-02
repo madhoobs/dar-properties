@@ -69,11 +69,11 @@
                     <ul>
                         <% if(currentUser) { %>
                             <li class="header-top-contact">
-                                <% if(currentUser.companyName) { %>
-                                    Welcome, <%= currentUser.companyName %>
-                                        <% } else { %>
-                                            Welcome, <%= currentUser.firstName %>
-                                                <% } %>
+                        <% if(currentUser.companyName) { %>
+                            Welcome, <%= currentUser.companyName %>
+                         <% } else { %>
+                            Welcome, <%= currentUser.firstName %>
+                        <% } %>
                             </li>
                             <li class="header-top-contact">
                                 <a href="/profile?id=<%= currentUser._id %>">My Account</a>
@@ -81,7 +81,7 @@
                             <li class="header-top-contact">
                                 <a href="/auth/logout">Logout</a>
                             </li>
-                            <% } else { %>
+                        <% } else { %>
                                 <li class="header-top-contact">
                                     <a href="/auth/login">Login</a>
                                 </li>
@@ -121,9 +121,9 @@
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="/">home</a></li>
                             <li class="scroll"><a href="#explore">explore</a></li>
-                            <% if(currentUser) { %>
+                            <% if(currentUser && currentUser.isSeller) { %>
                                 <li><a href="/listing/add">New Listing</a></li>
-                             <% } else { %>
+                             <% } else if (!currentUser) { %>
                                     <li class="scroll"><a href="#contact">contact</a></li>
                             <% } %>
                         </ul><!--/.nav -->
