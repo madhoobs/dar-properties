@@ -61,6 +61,11 @@
             <!---------------->
             <!---------------->
       </div>
+      <form method="POST" action="/comment/add">
+        <textarea name="question"></textarea>
+        <input class="form-control" name="askingUID" type="hidden" value="<%= currentUser._id %>">
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </div><!--/.container-->
 

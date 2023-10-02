@@ -10,7 +10,7 @@ const salt = 15
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/profilePic')
+    cb(null, './public/data')
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '' + Date.now() + '' + file.originalname)
@@ -18,7 +18,7 @@ var storage = multer.diskStorage({
 })
 var upload = multer({
   storage: storage
-}).single('profilePic')
+}).single('data')
 
 exports.auth_signup_get = (req, res) => {
   res.render('auth/signup')
@@ -30,7 +30,7 @@ exports.auth_signup_post = (req, res) => {
 
     let hash = bcrypt.hashSync(req.body.password, salt)
     user.password = hash
-
+user.profileImage = req.file.filename
     user
       .save()
       .then(() => {

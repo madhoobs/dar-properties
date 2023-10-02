@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 
 const userSchema = mongoose.Schema({
+  profileImage :{
+    type: String
+  },
   isSeller: {
     type: Boolean,
     default: false

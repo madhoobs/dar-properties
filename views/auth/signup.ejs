@@ -1,3 +1,8 @@
+<script src="/JS/type.js"></script>
+
+<h1> Create a new Account </h1>
+
+<form method="POST" action="/auth/signup" enctype="multipart/form-data">
 <!--subscription start -->
 <section id="contact" class="subscription">
     <div class="container">
@@ -200,7 +205,10 @@
         <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input type="password" name="confirmPassword" class="form-control" >
         </div>
-    
+     <div> 
+        <label class="form-label"> Upload profile picture</label>
+        <input type="file" name="profileImage" accept="image/*">
+     </div>
 
     <div class="col-md-6">
     <div class="form-check">
@@ -211,7 +219,7 @@
     </div>
     </div>
     <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <input type="submit" name="Sign Up" class="btn btn-primary"></input>
     </div>
 </form>
 </div>
