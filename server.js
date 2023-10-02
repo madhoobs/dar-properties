@@ -36,13 +36,13 @@ const authRouter = require('./routes/auth')
 const listingRouter = require('./routes/listings')
 const indexRouter = require('./routes/index')
 // const routerRo = require('./routes/auth')
-const profileRouter = require("./routes/profile")
+const profileRouter = require('./routes/profile')
 
 //Mount Routes
 app.use('/', authRouter)
 app.use('/', listingRouter)
 app.use('/', indexRouter)
-app.use('/',profileRouter)
+app.use('/', profileRouter)
 
 // Listen to requests on port
 app.listen(port, () => {
