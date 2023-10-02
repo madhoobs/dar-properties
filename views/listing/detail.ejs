@@ -61,11 +61,23 @@
             <!---------------->
             <!---------------->
       </div>
+      <div>
+        <% if(currentUser) { %>
+        
       <form method="POST" action="/comment/add">
         <textarea name="question"></textarea>
         <input class="form-control" name="askingUID" type="hidden" value="<%= currentUser._id %>">
+        <input type="hidden" name="listingID" value="<%= listing._id %>">
+        <input type="hidden" name="answeringUID" value="<%= listing.uid._id %>">
         <button type="submit">Submit</button>
       </form>
+      <% } else { %>
+        <p>
+          Please <a href="/auth/login">Log In</a> or 
+          <a href="/auth/signup">Register</a> to leave a comment
+        </p>
+      <% } %>
+    </div>
     </div>
   </div><!--/.container-->
 
