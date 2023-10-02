@@ -117,5 +117,4 @@ exports.profile_edit_post = async (req, res) => {
       console.log(err)
       res.send("Error updating user.")
     }
-   
 }
