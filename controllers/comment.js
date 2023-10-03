@@ -34,8 +34,8 @@ exports.comment_add_post = (req, res) => {
 
 // Adding a new comment/answer
 exports.comment_show_get = (req, res) => {
-  console.log(req.query.id)
-  User.findById(req.query.id)
+  console.log(req.user._id)
+  User.findById(req.user._id)
     .populate({
       path: 'listings',
       populate: {
@@ -62,3 +62,5 @@ exports.comment_show_post = (req, res) => {
       console.log('Record creation failed. ' + err)
     })
 }
+
+exports.comment_
