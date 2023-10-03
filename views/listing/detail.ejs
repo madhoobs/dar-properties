@@ -57,7 +57,11 @@
                       <% listing.comments.forEach((comment)=> { %>
                         <br>
                         <li>&nbsp; Question: <%= comment.question %></li>
-                        <li>&nbsp; Answer: <%= comment.answer %></li>
+                        <% if (comment.answer) { %>
+                          <li>&nbsp; Answer: <%= comment.answer %></li>
+                        <% } else { %>
+                          <li>&nbsp; ..Waiting for seller to answer..</li>
+                        <% } %>
                       <% }) %>
                       </ul>
                     </div>

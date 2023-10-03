@@ -48,12 +48,14 @@ exports.listing_edit_post = (req, res) => {}
 exports.listing_delete_get = (req, res) => {
   Listing.deleteOne({ _id: req.query.id })
     .then(() => {
-      res.redirect('/profile?id=' + currentUser._id)
+      console.log('/profile?id=' + req.user._id.toString())
+      res.redirect('/')
     })
     .catch((err) => {
       console.log('Record deletion failed. ' + err)
     })
 }
+
 //serach listing
 exports.listing_search_post = (req, res) => {
   const type = req.body.type
