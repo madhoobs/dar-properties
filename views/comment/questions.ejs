@@ -1,0 +1,32 @@
+<h1>Pending Questions</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Listing</th>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Submit</th>
+  </tr>
+
+  <% user.listings.forEach(function(listing) { %>
+    <% listing.comments.forEach(function(comment) { %>
+      <% if(!comment.answer) { %>
+    <form method="POST" action="show">
+    <tr>
+      <td>
+        <a href="/listing?id=<%= listing._id %>"><%= listing.type %> at <%= listing.location %></a>
+      </td>
+      <td><%= comment.question %></td>
+      <input type="hidden" name="commentId" value="<%= comment._id %>">
+      <td>
+        <input name="answer" type="text">
+      </td>
+      <td>
+        <button type="submit">Submit</button>
+      </td>
+    </tr>
+  </form>
+  <% } %>
+  <% }) %>
+  <% }) %>
+</table>

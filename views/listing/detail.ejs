@@ -37,7 +37,8 @@
                       <br>
                       Description: <%= listing.description %>
                       <br>
-                      Photos: <%= listing.photos %>
+                      Photos:
+                      <img src="<%= listing.photos %>">
                       <br>
                       Area Size: <%= listing.areaSize %> m<sup>2</sup>
                       <br>
@@ -50,8 +51,19 @@
                       Halls: <%= listing.halls %>
                       <br>
                       Parkings: <%= listing.parkings %>
-                      <br>
-                      Comments: <%= listing.comments %>
+                      <br><br>
+                      Comments:
+                      <ul>
+                      <% listing.comments.forEach((comment)=> { %>
+                        <br>
+                        <li>&nbsp; Question: <%= comment.question %></li>
+                        <% if (comment.answer) { %>
+                          <li>&nbsp; Answer: <%= comment.answer %></li>
+                        <% } else { %>
+                          <li>&nbsp; ..Waiting for seller to answer..</li>
+                        <% } %>
+                      <% }) %>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -62,10 +74,14 @@
             <!---------------->
       </div>
       <div>
-        <% if(currentUser) { %>
+        <% if(currentUser && currentUser._id.toString()===listing.uid._id.toString()) { %>
+        
+          <a href="/listing/delete?id=<%= listing._id %>" style="text-decoration: none;"><b>❌ DELETE LISTING</b></a></td>
+
+        <% } else if(currentUser) { %>
         
       <form method="POST" action="/comment/add">
-        <textarea name="question"></textarea>
+        <textarea name="question" placeholder="Ask the seller any question about this <%= listing.type %> at <%= listing.location %>"></textarea>
         <input class="form-control" name="askingUID" type="hidden" value="<%= currentUser._id %>">
         <input type="hidden" name="listingID" value="<%= listing._id %>">
         <input type="hidden" name="answeringUID" value="<%= listing.uid._id %>">
@@ -78,7 +94,8 @@
         </p>
       <% } %>
     </div>
-    </div>
+  </div>
+    
   </div><!--/.container-->
 
 </section><!--/.explore-->
