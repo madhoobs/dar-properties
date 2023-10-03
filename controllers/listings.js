@@ -46,7 +46,7 @@ exports.listing_edit_post = (req, res) => {}
 // Deleting an existing listing
 exports.listing_delete_get = (req, res) => {}
 
-//serach listing
+//search listing
 exports.listing_search_post=(req,res)=>{
   const type=req.body.type
   const location=req.body.location
