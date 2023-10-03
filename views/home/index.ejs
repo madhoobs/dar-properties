@@ -53,7 +53,8 @@
                 <i class="flaticon-building"></i>
               </div>
               <h2>Villa</h2>
-              <p>34 listings</p>
+              <% let villas=0 %>
+              <p><% listings.forEach((listing)=> { if (listing.type === "Villa") { villas++ } }) %> <%= villas %> Listings</p>
             </div>
           </li>
           <li>
@@ -62,7 +63,8 @@
                 <i class="flaticon-building"></i>
               </div>
               <h2>Apartment</h2>
-              <p>126 listings</p>
+              <% let apartment=0 %>
+              <p><% listings.forEach((listing)=> { if (listing.type === "Apartment") { apartment++ } }) %> <%= apartment %> Listings</p>
             </div>
           </li>
         </ul>
