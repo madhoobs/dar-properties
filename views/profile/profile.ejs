@@ -9,15 +9,13 @@
     </div>  
 
 <div class="container emp-profile">
-    <form method="post">
+    <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
                     <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style="height: 250px;">
                     <div class="file btn btn-lg btn-primary">
                         Change Photo
-                        
-                        <form method="POST" action="/profile/editProfileImage" enctype="multipart/form-data">
                             <div class="col-md-12">
                             <input type="file" name="profileImage" accept="image/*">
     </div>

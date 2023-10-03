@@ -19,7 +19,7 @@
           <div class="single-explore-item">
             <% listing.photos.forEach((img, index)=> { %>
               <div class="single-explore-img">
-                <img src="<%= img %>" alt="property photo">
+                <img src="/img/<%= img %>" alt="property photo">
                 <div class="single-explore-img-info">
             <% }) %>
               </div>
@@ -36,9 +36,6 @@
                       Price: <%= listing.price %> BHD
                       <br>
                       Description: <%= listing.description %>
-                      <br>
-                      Photos:
-                      <img src="<%= listing.photos %>">
                       <br>
                       Area Size: <%= listing.areaSize %> m<sup>2</sup>
                       <br>
