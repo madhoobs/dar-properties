@@ -19,6 +19,8 @@ const storage = multer.diskStorage({
 router.get('/profile', userCtrl.profile_show_get)
 router.get('/profile/edit',userCtrl.profile_edit_get)
 router.post('/profile/edit', userCtrl.profile_edit_post)
+router.get("/profile/changepassword" , userCtrl.profile_changePassword_get)
+router.post("/profile/changepassword" , userCtrl.profile_changePassword_post)
 
 module.exports = router
 
