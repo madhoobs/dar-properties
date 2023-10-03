@@ -50,16 +50,15 @@
 
 
     <tr>
-        <td>
+        
             <% if(user.companyName) {  %>
-                <%= user.companyName %>                 
-                <%= user.companyCR %>
-                <%= user.city %>
-                <%= user.address %>                 
-                    
+                <td><%= user.companyName %></td>
+                <td><%= user.companyCR %></td>
+                <td><%= user.city %></td>
+                <td><%= user.address %></td>
             <% } else { %>
-                <%= user.firstName %>                 
-                <%= user.lastName %>                 
+                <td><%= user.firstName %></td>
+                <td><%= user.lastName %></td>
             <% } %>
         </td>
 
