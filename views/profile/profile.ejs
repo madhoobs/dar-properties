@@ -1,8 +1,17 @@
 
-<% if (true) { %>
+<% if (currentUser._id.toString() === user._id.toString()) { %>
 
 <h1> My Account </h1>
 <img src="/uploads/<%=currentUser.profileImage%>">
+
+<form method="POST" action="/profile/editProfileImage" enctype="multipart/form-data">
+    <div class="col-md-12">
+    <input type="file" name="profileImage" accept="image/*">
+    <input type="text" name="id" value="<%= currentUser._id %>">
+    <input type="submit" class="btn btn-primary" value="Update"></input>
+    </form>
+
+</div>
 <a href="/profile/edit" class="btn btn-outline-primary"> Edit My Profile</a> 
 <% } %>
 

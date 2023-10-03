@@ -144,3 +144,22 @@ exports.profile_changePassword_post=(req,res)=>{
     }).catch(err=>{console.log(err)})
   
 }
+
+//change profile pic
+
+exports.profile_changepic_get = (req, res) => {
+
+  console.log("1111")
+
+  if (req.file.filename){ 
+    userProfileImage = req.file.filename 
+    }
+console.log("id", req.body.id)
+    User.findByIdAndUpdate(req.body.id ,{profileImage: userProfileImage})
+    .then(() => {
+      res.redirect(`/profile?id=${req.body.id}`)
+    }) 
+    .catch((err) => {
+      res.send(err)
+    })
+}
