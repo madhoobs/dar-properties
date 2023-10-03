@@ -41,8 +41,48 @@ exports.listing_details_get = (req, res) => {
 }
 
 // Updating an existing listing
-exports.listing_edit_get = (req, res) => {}
-exports.listing_edit_post = (req, res) => {}
+exports.listing_edit_get = (req, res) => {
+  Listing.findById(req.query.id)
+    .then((listing) => {
+      res.render('listing/edit', { listing })
+    })
+    .catch((err) => {
+      console.log('Please try again. ' + err)
+    })
+}
+exports.listing_edit_post = async (req, res) => {
+  const {
+    type,
+    location,
+    price,
+    description,
+    areaSize,
+    bedrooms,
+    bathrooms,
+    livingRooms,
+    halls,
+    parkings
+  } = req.body
+
+  try {
+    let updatedListing = {
+      type,
+      location,
+      price,
+      description,
+      areaSize,
+      bedrooms,
+      bathrooms,
+      livingRooms,
+      halls,
+      parkings
+    }
+    await Listing.findByIdAndUpdate(req.body.id, updatedListing)
+    res.redirect('/listing?id=' + req.body.id)
+  } catch (err) {
+    console.log('Listing update failed. ' + err)
+  }
+}
 
 // Deleting an existing listing
 exports.listing_delete_get = (req, res) => {
