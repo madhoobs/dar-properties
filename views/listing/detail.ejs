@@ -77,6 +77,7 @@
         <% if(currentUser && currentUser._id.toString()===listing.uid._id.toString()) { %>
         
           <a href="/listing/delete?id=<%= listing._id %>" style="text-decoration: none;"><b>❌ DELETE LISTING</b></a></td>
+          <a href="/listing/edit?id=<%= listing._id %>" style="text-decoration: none;"><b>📝 EDIT LISTING</b></a></td>
 
         <% } else if(currentUser) { %>
         
