@@ -48,38 +48,38 @@ exports.listing_edit_post = (req, res) => {}
 exports.listing_delete_get = (req, res) => {
   Listing.deleteOne({ _id: req.query.id })
     .then(() => {
-      res.redirect('/profile?id=' + currentUser._id)
+      console.log('/profile?id=' + req.user._id.toString())
+      res.redirect('/')
     })
     .catch((err) => {
       console.log('Record deletion failed. ' + err)
     })
+}
 
 //serach listing
-exports.listing_search_post=(req,res)=>{
-  const type=req.body.type
-  const location=req.body.location
-  let condition={}
-  if(type){
-    condition.type=type
+exports.listing_search_post = (req, res) => {
+  const type = req.body.type
+  const location = req.body.location
+  let condition = {}
+  if (type) {
+    condition.type = type
   }
-  if(location){
-    condition.location=location
+  if (location) {
+    condition.location = location
   }
-  Listing.find(condition).then(listings=>{
+  Listing.find(condition).then((listings) => {
     res.render('listing/search', { listings })
   })
 }
 
 //on click
-exports.listing_villa_get=(req,res)=>{
-  
-  Listing.find({type:'Villa'}).then(listings=>{
+exports.listing_villa_get = (req, res) => {
+  Listing.find({ type: 'Villa' }).then((listings) => {
     res.render('listing/search', { listings })
   })
 }
-exports.listing_apartment_get=(req,res)=>{
-  
-  Listing.find({type:'Apartment'}).then(listings=>{
+exports.listing_apartment_get = (req, res) => {
+  Listing.find({ type: 'Apartment' }).then((listings) => {
     res.render('listing/search', { listings })
   })
 }
