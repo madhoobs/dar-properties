@@ -18,6 +18,7 @@ exports.comment_add_post = (req, res) => {
           Listing.findById(req.body.listingID).then((listing) => {
             listing.comments.push(comment)
             listing.save()
+            res.redirect('/listing?id=' + req.body.listingID)
           })
           user.save().catch((err) => {
             console.log('Adding comment to user failed. ' + err)
