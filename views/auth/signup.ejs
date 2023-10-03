@@ -1,8 +1,12 @@
 <script src="/JS/type.js"></script>
+<style>
+    #contact {
+        display: none;
+    }
+</style>
 
-<form method="POST" action="/auth/signup" enctype="multipart/form-data">
 <!--subscription start -->
-<section id="contact" class="subscription">
+<section id="contact-2" class="subscription">
     <div class="container">
         <div class="subscribe-title text-center">
             <p>
@@ -16,216 +20,343 @@
                 Already have an account? <a href="/auth/login">Login Here</a>
             </p>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="subscription-input-group">
-<form method="POST" action="/auth/signup">
 
-    <div class="col-md-2">
-        <label for="type" class="form-label">Type</label>
-        <select id="type" name="isSeller" class="form-select" onchange="company()">
-            <option selected disabled>User Type</option>
-            <option id="Company" value="true"> Company </option>
-            <option id="Agent" value="true"> Agent </option>
-            <option id="Customer" value="false"> Customer </option>
-        </select>
-        </div>
-
-        <div class="col-md-12">
-            <label class="form-label"> Upload profile picture</label>
-            <input type="file" name="profileImage" accept="image/*">
-        </div>
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-9">
+                    <form method="POST" action="/auth/signup">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body">
         
-    <div class="col-md-12" id="firstName">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" name="firstName" class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="Your First Name">
-    </div>
+                                <div class="row align-items-center pt-4 pb-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">User Type</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+                                        <select id="type" name="isSeller" class="form-select" onchange="company()">
+                                            <option selected disabled>Choose Your User Type</option>
+                                            <option id="Company" value="true"> Company </option>
+                                            <option id="Agent" value="true"> Agent </option>
+                                            <option id="Customer" value="false"> Customer </option>
+                                        </select>
+                                    </div>
+                                </div>
+        
+                                <br>
 
-    <div class="col-md-12" id="lastName">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" name="lastName"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="Your Last Name">
-    </div>
+                                <div class="row align-items-center pt-4 pb-3" id="companyName" style="display: none;">
+                                    <div class="col-md-3 ps-5">
+                                
+                                        <h6 class="mb-0">Company Name</h6>
+                                
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+                                
+                                        <input type="text" name="companyName" class="form-control form-control-lg" placeholder="Company Name" />
+                                
+                                    </div>
+                                </div>
+        
+                                <div class="row align-items-center pt-4 pb-3" id="firstName" style="display: none;">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">First Name</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="text" name="firstName" class="form-control form-control-lg" placeholder="Your First Name" />
+        
+                                    </div>
+                                </div>
 
-    <div class="col-md-12" id="companyName">
-        <label for="companyName" class="form-label">Company Name</label>
-        <input type="text" name="companyName"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" >
-    </div>
+                                <br>
+                                
+                                <div class="row align-items-center pt-4 pb-3" id="lastName" style="display: none;">
+                                    <div class="col-md-3 ps-5">
+                                        
+                                        <h6 class="mb-0">Last Name</h6>
+                                        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+                                        
+                                        <input type="text" name="lastName" class="form-control form-control-lg" placeholder="Your Last Name" />
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="row align-items-center pt-4 pb-3" id="companyCR" style="display: none;">
+                                    <div class="col-md-3 ps-5">
+                                        
+                                        <h6 class="mb-0">Company CR</h6>
+                                        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+                                        
+                                        <input type="number" name="companyCR" class="form-control form-control-lg" placeholder="CR Number" />
+                                        
+                                    </div>
+                                </div>
 
-    <div class="col-md-4" id="companyCR">
-        <label for="companyCR" class="form-label">Commercial Registration</label>
-        <input type="text" name="companyCR"  class="subscription-input-form" style="width: 100%; margin-top: 20px;" placeholder="CR Number">
-    </div>
+                                <hr class="mx-n3">
+        
+                                <div class="row align-items-center pt-4 pb-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">City</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <select id="city" name="city" class="form-select">
+                                            <option selected disabled>Company City</option>
+                                            <option>A'ali</option>
+                                            <option>Abu Saiba'a </option>
+                                            <option>Adhari </option>
+                                            <option>Adliya </option>
+                                            <option>Al Areen </option>
+                                            <option>Al Eker </option>
+                                            <option>Al Hajar </option>
+                                            <option>Al Khamis </option>
+                                            <option>Al Naim </option>
+                                            <option>Al Qurayyah </option>
+                                            <option>Amwaj Islands </option>
+                                            <option>Arad </option>
+                                            <option>Askar </option>
+                                            <option>Awali </option>
+                                            <option>Bahrain Bay </option>
+                                            <option>Bahrain Harbor </option>
+                                            <option>Bani Jamrah </option>
+                                            <option>Barbar </option>
+                                            <option>Bilad Al Qadeem </option>
+                                            <option>Bu Asheera </option>
+                                            <option>Bu Ghazal </option>
+                                            <option>Bu Kowarah </option>
+                                            <option>Budaiya </option>
+                                            <option>Buquwa </option>
+                                            <option>Burhama </option>
+                                            <option>Buri </option>
+                                            <option>Busaiteen </option>
+                                            <option>Daih </option>
+                                            <option>Dair </option>
+                                            <option>Dimistan </option>
+                                            <option>Danat Albahrain </option>
+                                            <option>Dar Kulaib </option>
+                                            <option>Dilmunia </option>
+                                            <option>Diplomatic Area </option>
+                                            <option>Diraz </option>
+                                            <option>Diyar Al Muharraq </option>
+                                            <option>Durrat Al Bahrain </option>
+                                            <option>East Riffa </option>
+                                            <option>Galali </option>
+                                            <option>Ghuraifa </option>
+                                            <option>Guful </option>
+                                            <option>Hala </option>
+                                            <option>Halat Abdulsaleh </option>
+                                            <option>Hamad Town </option>
+                                            <option>Hamala </option>
+                                            <option>Hawrat A'ali </option>
+                                            <option>Hawrat Sanad </option>
+                                            <option>Hidd </option>
+                                            <option>Hoora </option>
+                                            <option>Isa Town </option>
+                                            <option>Jablat Habshi </option>
+                                            <option>Janabiyah </option>
+                                            <option>Jannusan </option>
+                                            <option>Jari Alshaikh </option>
+                                            <option>Jasrah </option>
+                                            <option>Jaw </option>
+                                            <option>Jid al haj </option>
+                                            <option>Jid Ali </option>
+                                            <option>Jidhafs </option>
+                                            <option>Juffair </option>
+                                            <option>Jurdab </option>
+                                            <option>Karbabad </option>
+                                            <option>Karranah </option>
+                                            <option>Karzakan </option>
+                                            <option>Khalifa town </option>
+                                            <option>Lawzi </option>
+                                            <option>Maameer </option>
+                                            <option>Malkiya </option>
+                                            <option>Manama </option>
+                                            <option>Maqaba </option>
+                                            <option>Maqshaa </option>
+                                            <option>Marassi Al Bahrain </option>
+                                            <option>Markh </option>
+                                            <option>Muharraq </option>
+                                            <option>Musala </option>
+                                            <option>Nabih Saleh </option>
+                                            <option>Northern Sehla </option>
+                                            <option>Nuranah </option>
+                                            <option>Nuwaidrat </option>
+                                            <option>Qadam </option>
+                                            <option>Qudaybiyah </option>
+                                            <option>Ra's Hayyan </option>
+                                            <option>Ras Rumman </option>
+                                            <option>Ras Zuwaid </option>
+                                            <option>Reef Island </option>
+                                            <option>Riffa </option>
+                                            <option>Riffa Alhajiyat </option>
+                                            <option>Riffa Al Hunainiyah </option>
+                                            <option>Riffa Alshamali </option>
+                                            <option>Riffa Views </option>
+                                            <option>Sadad </option>
+                                            <option>Safra </option>
+                                            <option>Salhiya </option>
+                                            <option>Salmabad </option>
+                                            <option>Salman Town </option>
+                                            <option>Salmaniya </option>
+                                            <option>Samaheej </option>
+                                            <option>Sanabis </option>
+                                            <option>Sanad </option>
+                                            <option>Saar </option>
+                                            <option>Saraya 2 </option>
+                                            <option>Sayah </option>
+                                            <option>Seef District </option>
+                                            <option>Shahrakan </option>
+                                            <option>Shakhura </option>
+                                            <option>Sitra </option>
+                                            <option>Sitra industrial </option>
+                                            <option>South sehla </option>
+                                            <option>Sugaya </option>
+                                            <option>Tashan </option>
+                                            <option>Tubli </option>
+                                            <option>Um alhasam </option>
+                                            <option>Wadi Al Sail </option>
+                                            <option>West Riffa </option>
+                                            <option>Zallaq </option>
+                                            <option>Zayed Town </option>
+                                            <option>Zinj </option>
+                                        </select>
+        
+                                    </div>
+                                </div>
 
-<div id="Address" class="col-md-4">
-    <div class="col-md-4">
-        <label for="city" class="form-label">City</label>
-        <select id="city" name="city" class="form-select">
-        <option selected disabled>Choose Your City</option>
-        <option>A'ali</option>
-        <option>Abu Saiba'a </option>
-        <option>Adhari </option>
-        <option>Adliya </option>
-        <option>Al Areen </option>
-        <option>Al Eker </option>
-        <option>Al Hajar </option>
-        <option>Al Khamis </option>
-        <option>Al Naim </option>
-        <option>Al Qurayyah </option>
-        <option>Amwaj Islands </option>
-        <option>Arad </option>
-        <option>Askar </option>
-        <option>Awali </option>
-        <option>Bahrain Bay </option>
-        <option>Bahrain Harbor </option>
-        <option>Bani Jamrah </option>
-        <option>Barbar </option>
-        <option>Bilad Al Qadeem </option>
-        <option>Bu Asheera </option>
-        <option>Bu Ghazal </option>
-        <option>Bu Kowarah </option>
-        <option>Budaiya </option>
-        <option>Buquwa </option>
-        <option>Burhama </option>
-        <option>Buri </option>
-        <option>Busaiteen </option>
-        <option>Daih </option>
-        <option>Dair </option>
-        <option>Dimistan </option>
-        <option>Danat Albahrain </option>
-        <option>Dar Kulaib </option>
-        <option>Dilmunia </option>
-        <option>Diplomatic Area </option>
-        <option>Diraz </option>
-        <option>Diyar Al Muharraq </option>
-        <option>Durrat Al Bahrain </option>
-        <option>East Riffa </option>
-        <option>Galali </option>
-        <option>Ghuraifa </option>
-        <option>Guful </option>
-        <option>Hala </option>
-        <option>Halat Abdulsaleh </option>
-        <option>Hamad Town </option>
-        <option>Hamala </option>
-        <option>Hawrat A'ali </option>
-        <option>Hawrat Sanad </option>
-        <option>Hidd </option>
-        <option>Hoora </option>
-        <option>Isa Town </option>
-        <option>Jablat Habshi </option>
-        <option>Janabiyah </option>
-        <option>Jannusan </option>
-        <option>Jari Alshaikh </option>
-        <option>Jasrah </option>
-        <option>Jaw </option>
-        <option>Jid al haj </option>
-        <option>Jid Ali </option>
-        <option>Jidhafs </option>
-        <option>Juffair </option>
-        <option>Jurdab </option>
-        <option>Karbabad </option>
-        <option>Karranah </option>
-        <option>Karzakan </option>
-        <option>Khalifa town </option>
-        <option>Lawzi </option>
-        <option>Maameer </option>
-        <option>Malkiya </option>
-        <option>Manama </option>
-        <option>Maqaba </option>
-        <option>Maqshaa </option>
-        <option>Marassi Al Bahrain </option>
-        <option>Markh </option>
-        <option>Muharraq </option>
-        <option>Musala </option>
-        <option>Nabih Saleh </option>
-        <option>Northern Sehla </option>
-        <option>Nuranah </option>
-        <option>Nuwaidrat </option>
-        <option>Qadam </option>
-        <option>Qudaybiyah </option>
-        <option>Ra's Hayyan </option>
-        <option>Ras Rumman </option>
-        <option>Ras Zuwaid </option>
-        <option>Reef Island </option>
-        <option>Riffa </option>
-        <option>Riffa Alhajiyat </option>
-        <option>Riffa Al Hunainiyah </option>
-        <option>Riffa Alshamali </option>
-        <option>Riffa Views </option>
-        <option>Sadad </option>
-        <option>Safra </option>
-        <option>Salhiya </option>
-        <option>Salmabad </option>
-        <option>Salman Town </option>
-        <option>Salmaniya </option>
-        <option>Samaheej </option>
-        <option>Sanabis </option>
-        <option>Sanad </option>
-        <option>Saar </option>
-        <option>Saraya 2 </option>
-        <option>Sayah </option>
-        <option>Seef District </option>
-        <option>Shahrakan </option>
-        <option>Shakhura </option>
-        <option>Sitra </option>
-        <option>Sitra industrial </option>
-        <option>South sehla </option>
-        <option>Sugaya </option>
-        <option>Tashan </option>
-        <option>Tubli </option>
-        <option>Um alhasam </option>
-        <option>Wadi Al Sail </option>
-        <option>West Riffa </option>
-        <option>Zallaq </option>
-        <option>Zayed Town </option>
-        <option>Zinj </option>
+                                <br> 
 
-        </select>
-    </div>
+                                <div class="row align-items-center pt-4 pb-3" id="address">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Address</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="text" name="address" class="form-control form-control-lg"
+                                            placeholder="Company Adress" />
+        
+                                    </div>
+                                </div>
 
-    <div class="col-md-4">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" name="address" placeholder="Building, Road, Block">
-    </div>
+                                <br>
+        
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Phone Number</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="number" name="phone" class="form-control form-control-lg"
+                                            placeholder="Enter your Phone Number" />
+        
+                                    </div>
+                                </div>
+        
+                                <hr class="mx-n3">
+        
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Email Address</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="example@example.com" id="'email"/>
+        
+                                    </div>
+                                </div>
 
-    </div>
+                                <br>
+        
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Password</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="password" name="password" class="form-control form-control-lg" placeholder="Enter Your Password" />
+        
+                                    </div>
+                                </div>
 
-    <div class="col-md-6"  id="phone">
-        <label for="phone" class="form-label">Phone Number</label>
-        <input type="number" name="phone" class="form-control">
+                                <br>
+        
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Confirm Password</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+        
+                                        <input type="password" name="confirmPassword" class="form-control form-control-lg"
+                                            placeholder="Confirm Your Password" />
+        
+                                    </div>
+                                </div>
+        
+                                <hr class="mx-n3">
+        
+                                <div class="row align-items-center py-3">
+                                    <div class="col-md-3 ps-5">
+        
+                                        <h6 class="mb-0">Profile Picture</h6>
+        
+                                    </div>
+                                    <div class="col-md-9 pe-5">
+                                        <input type="file" name="profileImage" accept="image/*"
+                                            class="form-control form-control-lg">
+                                        <div class="small text-muted mt-2">Upload your profile photo or logo. Max file size 10 MB</div>
+        
+                                    </div>
+                                </div>
+        
+                                <hr class="mx-n3">
+        
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" required>
+                                        <label class="form-check-label">
+                                            I Agree to the Terms & Conditions
+                                        </label>
+                                    </div>
+                                </div>
+        
+                                <br>
+        
+                                <div class="px-5 py-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Create Account</button>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    
-    
-    <div class="col-md-6" id="inputEmail">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" name="email" class="form-control" >
-    </div>
+</div>
 
-    <div class="col-md-6" name="password">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" name="password" class="form-control" >
-    </div>
-
-    <div class="col-md-6" name="confirmPassword">
-        <label for="confirmPassword" class="form-label">Confirm Password</label>
-        <input type="password" name="confirmPassword" class="form-control" >
-        </div>
-
-    <div class="col-md-6">
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" required>
-        <label class="form-check-label">
-        I agree to the terms & conditions
-        </label>
-    </div>
-    </div>
-    <div class="col-md-12">
-    <input type="submit" name="Sign Up" class="btn btn-primary"></input>
-    </div>
-</form>
-</div>
-</div>
-</div>
-</div>
 
 </section><!--/subscription-->
 <!--subscription end -->
+
+<section class="vh-100">
+ 
+</section>
