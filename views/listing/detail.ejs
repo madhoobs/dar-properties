@@ -3,7 +3,7 @@
   <div class="container">
     <div class="section-header">
       <h2><%= listing.type %> at <%= listing.location %></h2>
-      <p>Listed by: <a href="auth/profile?id=<%= listing.uid._id %>">
+      <p>Listed by: <a href="/profile?id=<%= listing.uid._id %>">
         <% if (listing.uid.companyName) { %>
         <%= listing.uid.companyName %>
         <% } else { %>

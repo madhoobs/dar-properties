@@ -15,6 +15,9 @@ router.get('/listing', listingCtrl.listing_details_get)
 router.get('/listing/edit', isLoggedIn, listingCtrl.listing_edit_get)
 router.post('/listing/edit', listingCtrl.listing_edit_post)
 router.get('/listing/delete', isLoggedIn, listingCtrl.listing_delete_get)
+router.post('/listing/search', listingCtrl.listing_search_post)
+router.get('/listing/Villa', listingCtrl.listing_villa_get)
+router.get('/listing/Apartment', listingCtrl.listing_apartment_get)
 
 // Exports
 module.exports = router
