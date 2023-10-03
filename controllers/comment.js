@@ -57,7 +57,7 @@ exports.comment_show_post = (req, res) => {
     .then((comment) => {
       comment.answer = req.body.answer
       comment.save()
-      res.redirect('/')
+      res.redirect(`/listing?id=${req.body.listingId}`)
     })
     .catch((err) => {
       console.log('Record creation failed. ' + err)
