@@ -44,6 +44,8 @@
     <!--responsive.css-->
     <link rel="stylesheet" href="/template/css/responsive.css">
 
+    <link rel="stylesheet" href="/template/css/custom.css" >
+
 </head>
 
 <body>
@@ -71,7 +73,7 @@
                             <li class="header-top-contact">
                         <% if(currentUser.companyName) { %>
                             Welcome, <%= currentUser.companyName %>
-                         <% } else { %>
+                        <% } else { %>
                             Welcome, <%= currentUser.firstName %>
                         <% } %>
                             </li>
@@ -123,7 +125,7 @@
                             <li class="scroll"><a href="#explore">explore</a></li>
                             <% if(currentUser && currentUser.isSeller) { %>
                                 <li><a href="/listing/add">New Listing</a></li>
-                             <% } else if (!currentUser) { %>
+                            <% } else if (!currentUser) { %>
                                     <li class="scroll"><a href="#contact">contact</a></li>
                             <% } %>
                         </ul><!--/.nav -->
