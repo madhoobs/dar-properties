@@ -1,5 +1,10 @@
-<h1> My Account </h1>
 
+<% if (true) { %>
+
+<h1> My Account </h1>
+<img src="/uploads/<%=currentUser.profileImage%>">
+<a href="/profile/edit" class="btn btn-outline-primary"> Edit My Profile</a> 
+<% } %>
 
 <table class="table able-striped">
 
@@ -46,6 +51,7 @@
 
         <a href="/profile/edit" class="btn btn-outline-primary"> Edit My Profile</a>
         <a href="/comment/show?=<%= currentUser._id %>">Pending Questions</a>
+
 
     </tr>
 
