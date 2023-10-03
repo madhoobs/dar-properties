@@ -36,7 +36,6 @@ const authRouter = require('./routes/auth')
 const listingRouter = require('./routes/listings')
 const indexRouter = require('./routes/index')
 const commentRouter = require('./routes/comment')
-// const routerRo = require('./routes/auth')
 const profileRouter = require('./routes/profile')
 
 //Mount Routes
