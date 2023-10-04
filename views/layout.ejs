@@ -62,8 +62,18 @@
                 </div>
             </li>
             <li class="head-responsive-right pull-right">
-                <div class="header-top-right">
+                <div class="header-top-right" >
                     <ul>
+                        <% if(currentUser) { %>
+                        <div class="container emp-profile">
+                            <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="row-md-4">
+                                        <div for="files" class="profile-img">
+                                            <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style="height: 50px; width: 50px;"  for="files">
+                                                                
+                        </div>
+                        <% } %>
                         <% if(currentUser) { %>
                             <li class="header-top-contact">
                         <% if(currentUser.companyName) { %>
