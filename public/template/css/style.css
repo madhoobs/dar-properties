@@ -781,10 +781,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 .subscription-input-group .subscription-input-form{
-    display: inline-block;
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+    /* display: inline-block; */
     width: 630px;
     height: 60px;
-    padding-left:30px;
+    /* padding-left:30px; */
     font-size: 16px;
     color: #a5adb3;
     -webkit-border-radius:3px;

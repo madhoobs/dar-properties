@@ -12,12 +12,12 @@
     <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style="height: 250px;">
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                            <div class="col-md-12">
-                            <input type="file" name="profileImage" accept="image/*">
+                <div for="files" class="profile-img">
+                    <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style="border-radius: 50%;"for="files">
+                    <div for="files" class="col-md-12">
+                    <input type="file" name="profileImage" id="files" class="hidden" accept="image/*" style="display: none;">
+                    <div for="files" class="file btn btn-lg btn-primary" >
+                        <label for="files" >Change Photo <i class="fa fa-pencil"></i></label>
     </div>
 </div>
 </div>
