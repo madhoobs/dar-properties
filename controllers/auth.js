@@ -154,6 +154,7 @@ exports.profile_changePassword_post = (req, res) => {
 
 //change profile pic
 exports.profile_changepic_get = (req, res) => {
+  console.log('adfdfdf')
   if (req.file.filename) {
     userProfileImage = req.file.filename
   }

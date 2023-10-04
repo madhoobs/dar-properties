@@ -318,7 +318,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     height:  70px;
     background:  #ff545a;
     text-transform:  capitalize;
-    margin-left:  30px;
     border-radius: 3px;
     -webkit-transition: 0.3s linear; 
     -moz-transition: 0.3s linear; 
@@ -948,4 +947,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     100%  {bottom:7px;}
 }
 
+.row-md-4 {
+    display: flex;
+    align-items: center;
+}
 /*========================Thank you=================

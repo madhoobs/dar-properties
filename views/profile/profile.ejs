@@ -1,76 +1,79 @@
-
-<link rel="stylesheet" href="style.css">
-
 <% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
 
-    <div class="container">
-    <div class="subscribe-title text-center">
-        <h1> My Account </h1>
-    </div>  
+<div class="container">
+  <div class="subscribe-title text-center">
+    <h1> My Account </h1>
+  </div>
 
-<div class="container emp-profile">
+  <div class="container emp-profile">
     <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-md-4">
-                <div for="files" class="profile-img">
-                    <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style="border-radius: 50%;"for="files">
-                    <div for="files" class="col-md-12">
-                    <input type="file" name="profileImage" id="files" class="hidden" accept="image/*" style="display: none;">
-                    <div for="files" class="file btn btn-lg btn-primary" >
-                        <label for="files" >Change Photo <i class="fa fa-pencil"></i></label>
-    </div>
-</div>
-</div>
-    <input type="hidden" name="id" value="<%= currentUser._id %>">
-    <input type="submit" class="btn btn-outline-danger" value="Update"></input>
+      <div class="row">
+        <div class="col-md-4">
+          <div for="files" class="profile-img">
+            <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
+            <div for="files" class="col-md-12">
+              <div for="files" class="file btn btn-lg btn-primary">
+                <label for="files">Change Photo <i class="fa fa-pencil"></i></label>
+              </div>
+            </div>
+          </div>
+          <br>
+
+        </div>
     </form>
+  </div>
 </div>
-</div>
-</div>
-<a href="/profile/edit" class="btn btn-outline-danger"> Edit My Profile</a> 
-<a href="/comment/show" class="btn btn-outline-danger">Pending Questions</a>
-<% } %>
+<img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
+
+<form method="POST" action="/profile/editProfileImage" enctype="multipart/form-data">
+  <input type="file" name="profileImage" id="files" class="hidden" accept="image/*">
+  <input type="hidden" name="id" value="<%= currentUser._id%>">
+  <input type="submit" class="btn btn-outline-danger" value="Update"></input>
+</form>
 
 <table class="table able-striped">
 
-    <tr>
-        <% if(user.companyName) {  %>
-        <th> Company Name </th>
-        <th> Company CR </th>
-        <th> City </th>
-        <th> Address </th>
-        <% } else { %>
-        <th> First Name </th>
-        <th> Last Name </th>
-        <% } %>
-        
-        <th> Phone Number </th>
-        <th> Email Address </th>
+  <tr>
+    <% if(user.companyName) {  %>
+    <th> Company Name </th>
+    <th> Company CR </th>
+    <th> City </th>
+    <th> Address </th>
+    <% } else { %>
+    <th> First Name </th>
+    <th> Last Name </th>
+    <% } %>
 
-    </tr>
+    <th> Phone Number </th>
+    <th> Email Address </th>
+
+  </tr>
 
 
-    <tr>
-        
-            <% if(user.companyName) {  %>
-                <td><%= user.companyName %></td>
-                <td><%= user.companyCR %></td>
-                <td><%= user.city %></td>
-                <td><%= user.address %></td>
-            <% } else { %>
-                <td><%= user.firstName %></td>
-                <td><%= user.lastName %></td>
-            <% } %>
-        </td>
+  <tr>
 
-        <td> 
-            <%= user.phone %>
-        </td>
-        
-        <td> 
-            <%= user.email %>
-        </td>
+    <% if(user.companyName) {  %>
+    <td><%= user.companyName %></td>
+    <td><%= user.companyCR %></td>
+    <td><%= user.city %></td>
+    <td><%= user.address %></td>
+    <% } else { %>
+    <td><%= user.firstName %></td>
+    <td><%= user.lastName %></td>
+    <% } %>
+    </td>
 
-    </tr>
+    <td>
+      <%= user.phone %>
+    </td>
+
+    <td>
+      <%= user.email %>
+    </td>
+
+  </tr>
 
 </table>
+<a href="/profile/edit" class="btn btn-outline-danger"> Edit My Profile</a>
+<a href="/comment/show" class="btn btn-outline-danger">Pending Questions</a>
+<% } %>
