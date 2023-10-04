@@ -1,0 +1,318 @@
+
+<!--subscription start -->
+<section id="contact-2" class="subscription">
+  <div class="container">
+    <div class="subscribe-title text-center">
+      <h2>
+        Add New Listing
+      </h2>
+    </div>
+    
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-9">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+              <form method="POST" action="/listing/add" enctype="multipart/form-data">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Property Type</h6>
+
+                  </div>
+                <div class="col-md-9 pe-5">
+                  <input type="radio" name="type" value="Villa">
+                  <label for="villa">Villa</label><br>
+                  <input type="radio" name="type" value="Apartment">
+                  <label for="apartment">Apartment</label><br>
+                </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Location</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <select id="city" name="location" class="form-select form-select-lg">
+                      <option selected disabled>Choose Property City</option>
+                      <option>A'ali</option>
+                      <option>Abu Saiba'a </option>
+                      <option>Adhari </option>
+                      <option>Adliya </option>
+                      <option>Al Areen </option>
+                      <option>Al Eker </option>
+                      <option>Al Hajar </option>
+                      <option>Al Khamis </option>
+                      <option>Al Naim </option>
+                      <option>Al Qurayyah </option>
+                      <option>Amwaj Islands </option>
+                      <option>Arad </option>
+                      <option>Askar </option>
+                      <option>Awali </option>
+                      <option>Bahrain Bay </option>
+                      <option>Bahrain Harbor </option>
+                      <option>Bani Jamrah </option>
+                      <option>Barbar </option>
+                      <option>Bilad Al Qadeem </option>
+                      <option>Bu Asheera </option>
+                      <option>Bu Ghazal </option>
+                      <option>Bu Kowarah </option>
+                      <option>Budaiya </option>
+                      <option>Buquwa </option>
+                      <option>Burhama </option>
+                      <option>Buri </option>
+                      <option>Busaiteen </option>
+                      <option>Daih </option>
+                      <option>Dair </option>
+                      <option>Dimistan </option>
+                      <option>Danat Albahrain </option>
+                      <option>Dar Kulaib </option>
+                      <option>Dilmunia </option>
+                      <option>Diplomatic Area </option>
+                      <option>Diraz </option>
+                      <option>Diyar Al Muharraq </option>
+                      <option>Durrat Al Bahrain </option>
+                      <option>East Riffa </option>
+                      <option>Galali </option>
+                      <option>Ghuraifa </option>
+                      <option>Guful </option>
+                      <option>Hala </option>
+                      <option>Halat Abdulsaleh </option>
+                      <option>Hamad Town </option>
+                      <option>Hamala </option>
+                      <option>Hawrat A'ali </option>
+                      <option>Hawrat Sanad </option>
+                      <option>Hidd </option>
+                      <option>Hoora </option>
+                      <option>Isa Town </option>
+                      <option>Jablat Habshi </option>
+                      <option>Janabiyah </option>
+                      <option>Jannusan </option>
+                      <option>Jari Alshaikh </option>
+                      <option>Jasrah </option>
+                      <option>Jaw </option>
+                      <option>Jid al haj </option>
+                      <option>Jid Ali </option>
+                      <option>Jidhafs </option>
+                      <option>Juffair </option>
+                      <option>Jurdab </option>
+                      <option>Karbabad </option>
+                      <option>Karranah </option>
+                      <option>Karzakan </option>
+                      <option>Khalifa town </option>
+                      <option>Lawzi </option>
+                      <option>Maameer </option>
+                      <option>Malkiya </option>
+                      <option>Manama </option>
+                      <option>Maqaba </option>
+                      <option>Maqshaa </option>
+                      <option>Marassi Al Bahrain </option>
+                      <option>Markh </option>
+                      <option>Muharraq </option>
+                      <option>Musala </option>
+                      <option>Nabih Saleh </option>
+                      <option>Northern Sehla </option>
+                      <option>Nuranah </option>
+                      <option>Nuwaidrat </option>
+                      <option>Qadam </option>
+                      <option>Qudaybiyah </option>
+                      <option>Ra's Hayyan </option>
+                      <option>Ras Rumman </option>
+                      <option>Ras Zuwaid </option>
+                      <option>Reef Island </option>
+                      <option>Riffa </option>
+                      <option>Riffa Alhajiyat </option>
+                      <option>Riffa Al Hunainiyah </option>
+                      <option>Riffa Alshamali </option>
+                      <option>Riffa Views </option>
+                      <option>Sadad </option>
+                      <option>Safra </option>
+                      <option>Salhiya </option>
+                      <option>Salmabad </option>
+                      <option>Salman Town </option>
+                      <option>Salmaniya </option>
+                      <option>Samaheej </option>
+                      <option>Sanabis </option>
+                      <option>Sanad </option>
+                      <option>Saar </option>
+                      <option>Saraya 2 </option>
+                      <option>Sayah </option>
+                      <option>Seef District </option>
+                      <option>Shahrakan </option>
+                      <option>Shakhura </option>
+                      <option>Sitra </option>
+                      <option>Sitra industrial </option>
+                      <option>South sehla </option>
+                      <option>Sugaya </option>
+                      <option>Tashan </option>
+                      <option>Tubli </option>
+                      <option>Um alhasam </option>
+                      <option>Wadi Al Sail </option>
+                      <option>West Riffa </option>
+                      <option>Zallaq </option>
+                      <option>Zayed Town </option>
+                      <option>Zinj </option>
+                    </select>
+                
+                  </div>
+                </div>
+
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Price</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="price" placeholder="0.000" class="form-control form-control-lg"> BHD
+                
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Description</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <textarea name="description" placeholder="Enter Property Details" class="form-control form-control-lg"></textarea>
+                
+                  </div>
+                </div>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Area Size</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="areaSize" placeholder="Property Area Size (sqm)" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Bedrooms</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="bedrooms" placeholder="Number of Bedrooms" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Bathrooms</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="bathrooms" placeholder="Number of Bathrooms" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Living Rooms</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="livingRooms" placeholder="Number of Living Rooms" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Halls</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="halls" placeholder="Number of Halls" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+                
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                
+                    <h6 class="mb-0">Parkings</h6>
+                
+                  </div>
+                  <div class="col-md-9 pe-5">
+                
+                    <input type="number" name="parkings" placeholder="Number of Parkings" class="form-control form-control-lg">
+                
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Property Pictures</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="file" name="propertyImage" accept="image/*" class="form-control form-control-lg">
+                    <div class="small text-muted mt-2">Upload real photos of the property. Max file size 10 MB</div>
+
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="px-5 py-4">
+                  <input type="hidden" name="uid" value="<%= currentUser._id %>">
+                  <button style="width: 100%; margin-top: 20px;" type="submit" class="btn btn-danger btn-lg">ADD LISTING</button>
+                </div>
+              </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section><!--/subscription-->
+<!--subscription end -->
+
+<section class="vh-100">
+
+</section>

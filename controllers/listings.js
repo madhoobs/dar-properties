@@ -8,6 +8,11 @@ exports.listing_add_get = (req, res) => {
 }
 exports.listing_add_post = (req, res) => {
   let listing = new Listing(req.body)
+  if (req.file && req.file.filename) {
+    listing.photos.push(req.file.filename)
+  } else {
+    listing.photos.push('apartment-img-test.png')
+  }
   listing
     .save()
     .then(() => {
