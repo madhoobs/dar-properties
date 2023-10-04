@@ -15,7 +15,47 @@
       <div class="row">
         <!---------------->
         <!---------------->
-        <div class=" col-md-4 col-sm-6">
+
+        <div class="card mb-3">
+          <img src="/img/<%= listing.photos[0] %>" class="card-img-top" alt="property photo">
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.type %> at <%= listing.location %></h5>
+            <p class="card-text"><br>
+              Location: <%= listing.location %>
+              <br>
+              Price: <%= listing.price %> BHD
+              <br>
+              Description: <%= listing.description %>
+              <br>
+              Area Size: <%= listing.areaSize %> m<sup>2</sup>
+              <br>
+              Bedrooms: <%= listing.bedrooms %>
+              <br>
+              Bathrooms: <%= listing.bathrooms %>
+              <br>
+              Living Rooms: <%= listing.livingRooms %>
+              <br>
+              Halls: <%= listing.halls %>
+              <br>
+              Parkings: <%= listing.parkings %>
+              <br><br>
+              Comments:
+              <ul>
+              <% listing.comments.forEach((comment)=> { %>
+                <br>
+                <li>&nbsp; Question: <%= comment.question %></li>
+                <% if (comment.answer) { %>
+                  <li>&nbsp; Answer: <%= comment.answer %></li>
+                <% } else { %>
+                  <li>&nbsp; ..Waiting for seller to answer..</li>
+                <% } %>
+              <% }) %>
+              </ul>
+          </div>
+        </div>
+
+
+        <!-- <div class=" col-md-4 col-sm-6">
           <div class="single-explore-item">
             <% listing.photos.forEach((img, index)=> { %>
               <div class="single-explore-img">
@@ -66,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
             <!---------------->
             <!---------------->
       </div>
@@ -79,11 +119,11 @@
         <% } else if(currentUser) { %>
         
       <form method="POST" action="/comment/add">
-        <textarea name="question" placeholder="Ask the seller any question about this <%= listing.type %> at <%= listing.location %>"></textarea>
+        <textarea name="question" placeholder="Ask the seller any question about this <%= listing.type %> at <%= listing.location %>" class="form-control"></textarea>
         <input class="form-control" name="askingUID" type="hidden" value="<%= currentUser._id %>">
         <input type="hidden" name="listingID" value="<%= listing._id %>">
         <input type="hidden" name="answeringUID" value="<%= listing.uid._id %>">
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-outline-danger" >Submit</button>
       </form>
       <% } else { %>
         <p>
