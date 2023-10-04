@@ -1,35 +1,26 @@
 <% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
 
 <div class="container">
-  <div class="subscribe-title text-center">
-    <h1> My Account </h1>
+  <div class="subscribe-title text-center" style="padding: 20px;">
+    <h2> My Account </h2>
   </div>
 
-  <div class="container emp-profile">
+  <div class="container emp-profile" >
     <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-4">
-          <div for="files" class="profile-img">
-            <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
-            <div for="files" class="col-md-12">
-              <div for="files" class="file btn btn-lg btn-primary">
-                <label for="files">Change Photo <i class="fa fa-pencil"></i></label>
-              </div>
-            </div>
-          </div>
           <br>
-
-        </div>
+          
     </form>
   </div>
 </div>
 <img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
 
 <form method="POST" action="/profile/editProfileImage" enctype="multipart/form-data">
+    <br>
   <input type="file" name="profileImage" id="files" class="hidden" accept="image/*">
   <input type="hidden" name="id" value="<%= currentUser._id%>">
-  <input type="submit" class="btn btn-outline-danger" value="Update"></input>
-</form>
+
 
 <table class="table able-striped">
 
@@ -74,6 +65,9 @@
   </tr>
 
 </table>
-<a href="/profile/edit" class="btn btn-outline-danger"> Edit My Profile</a>
 <a href="/comment/show" class="btn btn-outline-danger">Pending Questions</a>
+<a href="/profile/edit" class="btn btn-outline-danger"> Edit My Profile</a>
+<input type="submit" class="btn btn-outline-danger" value="Update My Profile Picture"></input>
+
 <% } %>
+</form>
