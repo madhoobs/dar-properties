@@ -134,6 +134,7 @@ _More screenshots to be added soon!_
 - Tasks Workspace: [Trello](https://trello.com/b/PdE3gmsY/project-2)
 - README.md Template: [Best README Template](https://github.com/othneildrew/Best-README-Template)
 - Homepage Template: [Themesine](https://www.themesine.com)
+- Default Profile Picture: [Pixabay](https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
