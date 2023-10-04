@@ -5,10 +5,12 @@ function company() {
     document.getElementById('lastName').style.display = 'none'
     document.getElementById('companyName').style.display = 'block'
     document.getElementById('companyCR').style.display = 'block'
+    document.getElementById('city').style.display = 'block'
     document.getElementById('address').style.display = 'block'
   } else {
     document.getElementById('companyName').style.display = 'none'
     document.getElementById('companyCR').style.display = 'none'
+    document.getElementById('city').style.display = 'none'
     document.getElementById('address').style.display = 'none'
     document.getElementById('firstName').style.display = 'block'
     document.getElementById('lastName').style.display = 'block'
