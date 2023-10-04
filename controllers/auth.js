@@ -30,8 +30,8 @@ exports.auth_signup_post = (req, res) => {
 
     let hash = bcrypt.hashSync(req.body.password, salt)
     user.password = hash
-    if (req.body.profileImage.filename) {
-      user.profileImage = req.body.profileImage.filename
+    if (req.file.filename) {
+      user.profileImage = req.file.filename
     }
     user
       .save()
@@ -151,7 +151,6 @@ exports.profile_changePassword_post = (req, res) => {
 }
 
 //change profile pic
-
 exports.profile_changepic_get = (req, res) => {
   if (req.file.filename) {
     userProfileImage = req.file.filename
