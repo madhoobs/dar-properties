@@ -2,23 +2,9 @@ const User = require('../models/User')
 
 const bcrypt = require('bcryptjs')
 
-const multer = require('multer')
-
 let passport = require('../helper/ppConfig')
 
 const salt = 15
-
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/data')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '' + Date.now() + '' + file.originalname)
-  }
-})
-var upload = multer({
-  storage: storage
-}).single('data')
 
 exports.auth_signup_get = (req, res) => {
   res.render('auth/signup')

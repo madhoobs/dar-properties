@@ -64,12 +64,9 @@
       <li class="head-responsive-right pull-right">
         <div class="header-top-right">
           <ul>
-            <% if(currentUser) { %>
             <div class="container emp-profile">
-              <form method="post" action="/profile/editProfileImage" enctype="multipart/form-data">
                 <div class="row">
                   <div class="row-md-4">
-                    <% } %>
                     <% if(currentUser) { %>
                     <li class="header-top-contact">
                       <% if(currentUser.companyName) { %>
@@ -95,6 +92,8 @@
                       <a href="/auth/signup">Register</a>
                     </li>
                     <% } %>
+                  </div>
+                </div>
           </ul>
         </div>
       </li>
@@ -132,7 +131,6 @@
   <!-- top-area Start -->
 
   <!-- top-area End -->
-
 
   <body>
     <%- body  %>
