@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://git.generalassemb.ly/Madhoob/dar-properties">
+  <a href="https://dar-properties.onrender.com/">
     <img src="public/img/logo.png" alt="Logo" width="270" height="80">
   </a>
 
@@ -48,6 +48,8 @@ Real Estate Listings Website
 Dar Properties is a real estate listings app for buying and renting properties locally.
 <br>
 This project is done for the second required project for General Assembly's Software Engineering Immersive course.
+<br> <br>
+Check Our Live Version [Here](https://dar-properties.onrender.com/)!
 
 ### Built With
 
