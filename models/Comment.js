@@ -27,6 +27,7 @@ const commentSchema = mongoose.Schema(
       required: true
     }
   },
+  // created at , updated at
   {
     timestamps: true
   }
