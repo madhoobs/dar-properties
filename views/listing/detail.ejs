@@ -58,7 +58,7 @@
         <input type="hidden" name="listingID" value="<%= listing._id %>">
         <input type="hidden" name="answeringUID" value="<%= listing.uid._id %>">
         <br>
-        <button type="submit" class="btn btn-outline-danger" >Submit</button>
+        <button type="submit" class="btn btn-outline-danger" style="width: 50%;">SUBMIT QUESTION</button>
       </form>
       <% } else { %>
         <p>
@@ -70,23 +70,38 @@
   </div>
     <br>
 
-  <div class="card">
-    <div class="card-body">
-      <h4>Comments:</h4>
-          <ul>
-          <% listing.comments.forEach((comment)=> { %>
-            <hr>
-            <li>&nbsp; Question: <%= comment.question %></li>
+    <h4>Comments:</h4>
+    <% listing.comments.forEach((comment)=> { %>
+      <div class="card" style="margin-top: 15px;">
+        <div class="card-body">
+              <ul>
+            <li>&nbsp; <b>Question:</b> <%= comment.question %></li>
             <% if (comment.answer) { %>
-              <li>&nbsp; Answer: <%= comment.answer %></li>
+              <li>&nbsp; <b>Seller's Answer:</b> <%= comment.answer %></li>
             <% } else { %>
-              <li>&nbsp; ..Waiting for seller to answer..</li>
+              <li>&nbsp; <b>Waiting for seller to answer...</b></li>
             <% } %>
-            
-          <% }) %>
           </ul>
-    </div>
-  </div>
+          <% if (currentUser && currentUser._id.toString() === comment.askingUID.toString()) { %>
+            <p style="text-align: right;">
+              <a href="/comment/delete?id=<%= comment._id %>&listing=<%= comment.listingID %>" style="text-decoration: none;">
+                <b>❌ DELETE QUESTION</b>
+              </a>
+            <% if (!comment.answer) { %>
+              &nbsp; &nbsp; &nbsp;
+              <a href="/comment/edit?id=<%= comment._id %>" style="text-decoration: none;">
+                <b>📝 EDIT QUESTION</b>
+              </a>
+            <% } %>
+            </p>
+            <% } %>
+        </div>
+      </div>
+      <% }) %>
+      <% if (listing.comments.length === 0) { %>
+        <br>
+        <p style="text-align: center;">There are no comments yet on this property.</p>
+      <% } %>
 </div><!--/.container-->
 
 </section><!--/.explore-->
