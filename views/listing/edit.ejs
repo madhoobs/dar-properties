@@ -1,224 +1,324 @@
-<form method="POST" action="/listing/edit">
-  <table>
-    <thead>
-      <tr class="table100-head">
-        <th colspan="2">
-          Add New Listing
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="width: 15%;">
-          Property Type:
-        </td>
-        <td>
-          <input type="radio" name="type" value="Villa" <% if (listing.type === "Villa") { %> checked <% } %> >
-          <label for="villa">Villa</label><br>
-          <input type="radio" name="type" value="Apartment" <% if (listing.type === "Apartment") { %> checked <% } %> >
-          <label for="apartment">Apartment</label><br>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Location:
-        </td>
-        <td>
-          <select id="city" name="location" class="form-select">
-            <option disabled>Choose Property City</option>
-            <option <% if (listing.location==="A'ali" ) { %> selected <% } %> >A'ali</option>
-            <option <% if (listing.location==="Abu Saiba'a" ) { %> selected <% } %> >Abu Saiba'a </option>
-            <option <% if (listing.location==="Adhari" ) { %> selected <% } %> >Adhari </option>
-            <option <% if (listing.location==="Adliya" ) { %> selected <% } %> >Adliya </option>
-            <option <% if (listing.location==="Al Areen" ) { %> selected <% } %> >Al Areen </option>
-            <option <% if (listing.location==="Al Eker" ) { %> selected <% } %> >Al Eker </option>
-            <option <% if (listing.location==="Al Hajar" ) { %> selected <% } %> >Al Hajar </option>
-            <option <% if (listing.location==="Al Khamis" ) { %> selected <% } %> >Al Khamis </option>
-            <option <% if (listing.location==="Al Naim" ) { %> selected <% } %> >Al Naim </option>
-            <option <% if (listing.location==="Al Qurayyah" ) { %> selected <% } %> >Al Qurayyah </option>
-            <option <% if (listing.location==="Amwaj Islands" ) { %> selected <% } %> >Amwaj Islands </option>
-            <option <% if (listing.location==="Arad" ) { %> selected <% } %> >Arad </option>
-            <option <% if (listing.location==="Askar" ) { %> selected <% } %> >Askar </option>
-            <option <% if (listing.location==="Awali" ) { %> selected <% } %> >Awali </option>
-            <option <% if (listing.location==="Bahrain Bay" ) { %> selected <% } %> >Bahrain Bay </option>
-            <option <% if (listing.location==="Bahrain Harbor" ) { %> selected <% } %> >Bahrain Harbor </option>
-            <option <% if (listing.location==="Bani Jamrah" ) { %> selected <% } %> >Bani Jamrah </option>
-            <option <% if (listing.location==="Barbar" ) { %> selected <% } %> >Barbar </option>
-            <option <% if (listing.location==="Bilad Al Qadeem" ) { %> selected <% } %> >Bilad Al Qadeem </option>
-            <option <% if (listing.location==="A'Bu Asheera" ) { %> selected <% } %> >Bu Asheera </option>
-            <option <% if (listing.location==="A'Bu Ghazal" ) { %> selected <% } %> >Bu Ghazal </option>
-            <option <% if (listing.location==="A'Bu Kowarah" ) { %> selected <% } %> >Bu Kowarah </option>
-            <option <% if (listing.location==="A'Budaiya" ) { %> selected <% } %> >Budaiya </option>
-            <option <% if (listing.location==="A'Buquwa" ) { %> selected <% } %> >Buquwa </option>
-            <option <% if (listing.location==="A'Burhama" ) { %> selected <% } %> >Burhama </option>
-            <option <% if (listing.location==="A'Buri" ) { %> selected <% } %> >Buri </option>
-            <option <% if (listing.location==="A'Busaiteen" ) { %> selected <% } %> >Busaiteen </option>
-            <option <% if (listing.location==="A'Daih" ) { %> selected <% } %> >Daih </option>
-            <option <% if (listing.location==="A'Dair" ) { %> selected <% } %> >Dair </option>
-            <option <% if (listing.location==="A'Dimistan" ) { %> selected <% } %> >Dimistan </option>
-            <option <% if (listing.location==="A'Danat Albahrain" ) { %> selected <% } %> >Danat Albahrain </option>
-            <option <% if (listing.location==="Dar Kulaib" ) { %> selected <% } %> >Dar Kulaib </option>
-            <option <% if (listing.location==="Dilmunia" ) { %> selected <% } %> >Dilmunia </option>
-            <option <% if (listing.location==="Diplomatic Area" ) { %> selected <% } %> >Diplomatic Area </option>
-            <option <% if (listing.location==="Diraz" ) { %> selected <% } %> >Diraz </option>
-            <option <% if (listing.location==="Diyar Al Muharraq" ) { %> selected <% } %> >Diyar Al Muharraq </option>
-            <option <% if (listing.location==="Durrat Al Bahrain" ) { %> selected <% } %> >Durrat Al Bahrain </option>
-            <option <% if (listing.location==="East Riffa" ) { %> selected <% } %> >East Riffa </option>
-            <option <% if (listing.location==="Galali" ) { %> selected <% } %> >Galali </option>
-            <option <% if (listing.location==="Ghuraifa" ) { %> selected <% } %> >Ghuraifa </option>
-            <option <% if (listing.location==="Guful" ) { %> selected <% } %> >Guful </option>
-            <option <% if (listing.location==="Hala" ) { %> selected <% } %> >Hala </option>
-            <option <% if (listing.location==="Halat Abdulsaleh" ) { %> selected <% } %> >Halat Abdulsaleh </option>
-            <option <% if (listing.location==="Hamad Town" ) { %> selected <% } %> >Hamad Town </option>
-            <option <% if (listing.location==="Hamala" ) { %> selected <% } %> >Hamala </option>
-            <option <% if (listing.location==="Hawrat A'ali" ) { %> selected <% } %> >Hawrat A'ali </option>
-            <option <% if (listing.location==="Hawrat Sanad" ) { %> selected <% } %> >Hawrat Sanad </option>
-            <option <% if (listing.location==="Hidd" ) { %> selected <% } %> >Hidd </option>
-            <option <% if (listing.location==="Hoora" ) { %> selected <% } %> >Hoora </option>
-            <option <% if (listing.location==="Isa Town" ) { %> selected <% } %> >Isa Town </option>
-            <option <% if (listing.location==="Jablat Habshi" ) { %> selected <% } %> >Jablat Habshi </option>
-            <option <% if (listing.location==="Janabiyah" ) { %> selected <% } %> >Janabiyah </option>
-            <option <% if (listing.location==="Jannusan" ) { %> selected <% } %> >Jannusan </option>
-            <option <% if (listing.location==="Jari Alshaikh" ) { %> selected <% } %> >Jari Alshaikh </option>
-            <option <% if (listing.location==="Jasrah" ) { %> selected <% } %> >Jasrah </option>
-            <option <% if (listing.location==="Jaw" ) { %> selected <% } %> >Jaw </option>
-            <option <% if (listing.location==="Jid al haj" ) { %> selected <% } %> >Jid al haj </option>
-            <option <% if (listing.location==="Jid Ali" ) { %> selected <% } %> >Jid Ali </option>
-            <option <% if (listing.location==="Jidhafs" ) { %> selected <% } %> >Jidhafs </option>
-            <option <% if (listing.location==="Juffair" ) { %> selected <% } %> >Juffair </option>
-            <option <% if (listing.location==="Jurdab" ) { %> selected <% } %> >Jurdab </option>
-            <option <% if (listing.location==="Karbabad" ) { %> selected <% } %> >Karbabad </option>
-            <option <% if (listing.location==="Karranah" ) { %> selected <% } %> >Karranah </option>
-            <option <% if (listing.location==="Karzakan" ) { %> selected <% } %> >Karzakan </option>
-            <option <% if (listing.location==="Khalifa town" ) { %> selected <% } %> >Khalifa town </option>
-            <option <% if (listing.location==="Lawzi" ) { %> selected <% } %> >Lawzi </option>
-            <option <% if (listing.location==="Maameer" ) { %> selected <% } %> >Maameer </option>
-            <option <% if (listing.location==="Malkiya" ) { %> selected <% } %> >Malkiya </option>
-            <option <% if (listing.location==="Manama" ) { %> selected <% } %> >Manama </option>
-            <option <% if (listing.location==="Maqaba" ) { %> selected <% } %> >Maqaba </option>
-            <option <% if (listing.location==="Maqshaa" ) { %> selected <% } %> >Maqshaa </option>
-            <option <% if (listing.location==="Marassi Al Bahrain" ) { %> selected <% } %> >Marassi Al Bahrain </option>
-            <option <% if (listing.location==="Markh" ) { %> selected <% } %> >Markh </option>
-            <option <% if (listing.location==="Muharraq" ) { %> selected <% } %> >Muharraq </option>
-            <option <% if (listing.location==="Musala" ) { %> selected <% } %> >Musala </option>
-            <option <% if (listing.location==="Nabih Saleh" ) { %> selected <% } %> >Nabih Saleh </option>
-            <option <% if (listing.location==="Northern Sehla" ) { %> selected <% } %> >Northern Sehla </option>
-            <option <% if (listing.location==="Nuranah" ) { %> selected <% } %> >Nuranah </option>
-            <option <% if (listing.location==="Nuwaidrat" ) { %> selected <% } %> >Nuwaidrat </option>
-            <option <% if (listing.location==="Qadam" ) { %> selected <% } %> >Qadam </option>
-            <option <% if (listing.location==="Qudaybiyah" ) { %> selected <% } %> >Qudaybiyah </option>
-            <option <% if (listing.location==="Ras Hayyan" ) { %> selected <% } %> >Ras Hayyan </option>
-            <option <% if (listing.location==="Ras Rumman" ) { %> selected <% } %> >Ras Rumman </option>
-            <option <% if (listing.location==="Ras Zuwaid" ) { %> selected <% } %> >Ras Zuwaid </option>
-            <option <% if (listing.location==="Reef Island" ) { %> selected <% } %> >Reef Island </option>
-            <option <% if (listing.location==="Riffa" ) { %> selected <% } %> >Riffa </option>
-            <option <% if (listing.location==="Riffa Alhajiyat" ) { %> selected <% } %> >Riffa Alhajiyat </option>
-            <option <% if (listing.location==="Riffa Al Hunainiyah" ) { %> selected <% } %> >Riffa Al Hunainiyah </option>
-            <option <% if (listing.location==="Riffa Alshamali" ) { %> selected <% } %> >Riffa Alshamali </option>
-            <option <% if (listing.location==="Riffa Views" ) { %> selected <% } %> >Riffa Views </option>
-            <option <% if (listing.location==="Sadad" ) { %> selected <% } %> >Sadad </option>
-            <option <% if (listing.location==="Safra" ) { %> selected <% } %> >Safra </option>
-            <option <% if (listing.location==="Salhiya" ) { %> selected <% } %> >Salhiya </option>
-            <option <% if (listing.location==="Salmabad" ) { %> selected <% } %> >Salmabad </option>
-            <option <% if (listing.location==="Salman Town" ) { %> selected <% } %> >Salman Town </option>
-            <option <% if (listing.location==="Salmaniya" ) { %> selected <% } %> >Salmaniya </option>
-            <option <% if (listing.location==="Samaheej" ) { %> selected <% } %> >Samaheej </option>
-            <option <% if (listing.location==="Sanabis" ) { %> selected <% } %> >Sanabis </option>
-            <option <% if (listing.location==="Sanad" ) { %> selected <% } %> >Sanad </option>
-            <option <% if (listing.location==="Saar" ) { %> selected <% } %> >Saar </option>
-            <option <% if (listing.location==="Saraya 2" ) { %> selected <% } %> >Saraya 2 </option>
-            <option <% if (listing.location==="Sayah" ) { %> selected <% } %> >Sayah </option>
-            <option <% if (listing.location==="Seef District" ) { %> selected <% } %> >Seef District </option>
-            <option <% if (listing.location==="Shahrakan" ) { %> selected <% } %> >Shahrakan </option>
-            <option <% if (listing.location==="Shakhura" ) { %> selected <% } %> >Shakhura </option>
-            <option <% if (listing.location==="Sitra" ) { %> selected <% } %> >Sitra </option>
-            <option <% if (listing.location==="Sitra industrial" ) { %> selected <% } %> >Sitra industrial </option>
-            <option <% if (listing.location==="South sehla" ) { %> selected <% } %> >South sehla </option>
-            <option <% if (listing.location==="Sugaya" ) { %> selected <% } %> >Sugaya </option>
-            <option <% if (listing.location==="Tashan" ) { %> selected <% } %> >Tashan </option>
-            <option <% if (listing.location==="Tubli" ) { %> selected <% } %> >Tubli </option>
-            <option <% if (listing.location==="Um alhasam" ) { %> selected <% } %> >Um alhasam </option>
-            <option <% if (listing.location==="Wadi Al Sail" ) { %> selected <% } %> >Wadi Al Sail </option>
-            <option <% if (listing.location==="West Riffa" ) { %> selected <% } %> >West Riffa </option>
-            <option <% if (listing.location==="Zallaq" ) { %> selected <% } %> >Zallaq </option>
-            <option <% if (listing.location==="Zayed Town" ) { %> selected <% } %> >Zayed Town </option>
-            <option <% if (listing.location==="Zinj" ) { %> selected <% } %> >Zinj </option>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Price:
-        </td>
-        <td>
-          <input type="number" name="price" placeholder="Enter New Price" value="<%= listing.price %>" /> BHD
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Description:
-        </td>
-        <td>
-          <textarea name="description" placeholder="Enter New Description"><%= listing.description %></textarea>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Area Size:
-        </td>
-        <td>
-          <input type="number" name="areaSize" placeholder="Property Area Size (sqm)" value="<%= listing.areaSize %>" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Bedrooms:
-        </td>
-        <td>
-          <input type="number" name="bedrooms" placeholder="Number of Bedrooms" value="<%= listing.bedrooms %>" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Bathrooms:
-        </td>
-        <td>
-          <input type="number" name="bathrooms" placeholder="Number of Bathrooms" value="<%= listing.bathrooms %>" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Living Rooms:
-        </td>
-        <td>
-          <input type="number" name="livingRooms" placeholder="Number of Living Rooms" value="<%= listing.livingRooms %>" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Halls:
-        </td>
-        <td>
-          <input type="number" name="halls" placeholder="Number of Halls" value="<%= listing.halls %>" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Parkings:
-        </td>
-        <td>
-          <input type="number" name="parkings" placeholder="Number of Parkings" value="<%= listing.parkings %>" />
-        </td>
-      </tr>
-      <input type="hidden" name="id" value=<%=listing._id %> >
-      <tr>
-        <td colspan="2" style="text-align: center;">
-          <input type="submit" value="EDIT" class="button-4" style="width: 50%;">
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<!--subscription start -->
+<section id="contact-2" class="subscription">
+  <div class="container">
+    <div class="subscribe-title text-center">
+      <h2>
+        Edit Listing
+      </h2>
+    </div>
+
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-9">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+              <form method="POST" action="/listing/edit">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Property Type</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="radio" name="type" value="Villa" <% if (listing.type==="Villa" ) { %> checked <% } %> >
+                      <label for="villa">Villa</label><br>
+                      <input type="radio" name="type" value="Apartment" <% if (listing.type==="Apartment" ) { %> checked <% } %> >
+                        <label for="apartment">Apartment</label><br>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Location</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <select id="city" name="location" class="form-select">
+                      <option disabled>Choose Property City</option>
+                      <option <% if (listing.location==="A'ali" ) { %> selected <% } %> >A'ali</option>
+                      <option <% if (listing.location==="Abu Saiba'a" ) { %> selected <% } %> >Abu Saiba'a </option>
+                      <option <% if (listing.location==="Adhari" ) { %> selected <% } %> >Adhari </option>
+                      <option <% if (listing.location==="Adliya" ) { %> selected <% } %> >Adliya </option>
+                      <option <% if (listing.location==="Al Areen" ) { %> selected <% } %> >Al Areen </option>
+                      <option <% if (listing.location==="Al Eker" ) { %> selected <% } %> >Al Eker </option>
+                      <option <% if (listing.location==="Al Hajar" ) { %> selected <% } %> >Al Hajar </option>
+                      <option <% if (listing.location==="Al Khamis" ) { %> selected <% } %> >Al Khamis </option>
+                      <option <% if (listing.location==="Al Naim" ) { %> selected <% } %> >Al Naim </option>
+                      <option <% if (listing.location==="Al Qurayyah" ) { %> selected <% } %> >Al Qurayyah </option>
+                      <option <% if (listing.location==="Amwaj Islands" ) { %> selected <% } %> >Amwaj Islands </option>
+                      <option <% if (listing.location==="Arad" ) { %> selected <% } %> >Arad </option>
+                      <option <% if (listing.location==="Askar" ) { %> selected <% } %> >Askar </option>
+                      <option <% if (listing.location==="Awali" ) { %> selected <% } %> >Awali </option>
+                      <option <% if (listing.location==="Bahrain Bay" ) { %> selected <% } %> >Bahrain Bay </option>
+                      <option <% if (listing.location==="Bahrain Harbor" ) { %> selected <% } %> >Bahrain Harbor </option>
+                      <option <% if (listing.location==="Bani Jamrah" ) { %> selected <% } %> >Bani Jamrah </option>
+                      <option <% if (listing.location==="Barbar" ) { %> selected <% } %> >Barbar </option>
+                      <option <% if (listing.location==="Bilad Al Qadeem" ) { %> selected <% } %> >Bilad Al Qadeem </option>
+                      <option <% if (listing.location==="A'Bu Asheera" ) { %> selected <% } %> >Bu Asheera </option>
+                      <option <% if (listing.location==="A'Bu Ghazal" ) { %> selected <% } %> >Bu Ghazal </option>
+                      <option <% if (listing.location==="A'Bu Kowarah" ) { %> selected <% } %> >Bu Kowarah </option>
+                      <option <% if (listing.location==="A'Budaiya" ) { %> selected <% } %> >Budaiya </option>
+                      <option <% if (listing.location==="A'Buquwa" ) { %> selected <% } %> >Buquwa </option>
+                      <option <% if (listing.location==="A'Burhama" ) { %> selected <% } %> >Burhama </option>
+                      <option <% if (listing.location==="A'Buri" ) { %> selected <% } %> >Buri </option>
+                      <option <% if (listing.location==="A'Busaiteen" ) { %> selected <% } %> >Busaiteen </option>
+                      <option <% if (listing.location==="A'Daih" ) { %> selected <% } %> >Daih </option>
+                      <option <% if (listing.location==="A'Dair" ) { %> selected <% } %> >Dair </option>
+                      <option <% if (listing.location==="A'Dimistan" ) { %> selected <% } %> >Dimistan </option>
+                      <option <% if (listing.location==="A'Danat Albahrain" ) { %> selected <% } %> >Danat Albahrain </option>
+                      <option <% if (listing.location==="Dar Kulaib" ) { %> selected <% } %> >Dar Kulaib </option>
+                      <option <% if (listing.location==="Dilmunia" ) { %> selected <% } %> >Dilmunia </option>
+                      <option <% if (listing.location==="Diplomatic Area" ) { %> selected <% } %> >Diplomatic Area </option>
+                      <option <% if (listing.location==="Diraz" ) { %> selected <% } %> >Diraz </option>
+                      <option <% if (listing.location==="Diyar Al Muharraq" ) { %> selected <% } %> >Diyar Al Muharraq </option>
+                      <option <% if (listing.location==="Durrat Al Bahrain" ) { %> selected <% } %> >Durrat Al Bahrain </option>
+                      <option <% if (listing.location==="East Riffa" ) { %> selected <% } %> >East Riffa </option>
+                      <option <% if (listing.location==="Galali" ) { %> selected <% } %> >Galali </option>
+                      <option <% if (listing.location==="Ghuraifa" ) { %> selected <% } %> >Ghuraifa </option>
+                      <option <% if (listing.location==="Guful" ) { %> selected <% } %> >Guful </option>
+                      <option <% if (listing.location==="Hala" ) { %> selected <% } %> >Hala </option>
+                      <option <% if (listing.location==="Halat Abdulsaleh" ) { %> selected <% } %> >Halat Abdulsaleh </option>
+                      <option <% if (listing.location==="Hamad Town" ) { %> selected <% } %> >Hamad Town </option>
+                      <option <% if (listing.location==="Hamala" ) { %> selected <% } %> >Hamala </option>
+                      <option <% if (listing.location==="Hawrat A'ali" ) { %> selected <% } %> >Hawrat A'ali </option>
+                      <option <% if (listing.location==="Hawrat Sanad" ) { %> selected <% } %> >Hawrat Sanad </option>
+                      <option <% if (listing.location==="Hidd" ) { %> selected <% } %> >Hidd </option>
+                      <option <% if (listing.location==="Hoora" ) { %> selected <% } %> >Hoora </option>
+                      <option <% if (listing.location==="Isa Town" ) { %> selected <% } %> >Isa Town </option>
+                      <option <% if (listing.location==="Jablat Habshi" ) { %> selected <% } %> >Jablat Habshi </option>
+                      <option <% if (listing.location==="Janabiyah" ) { %> selected <% } %> >Janabiyah </option>
+                      <option <% if (listing.location==="Jannusan" ) { %> selected <% } %> >Jannusan </option>
+                      <option <% if (listing.location==="Jari Alshaikh" ) { %> selected <% } %> >Jari Alshaikh </option>
+                      <option <% if (listing.location==="Jasrah" ) { %> selected <% } %> >Jasrah </option>
+                      <option <% if (listing.location==="Jaw" ) { %> selected <% } %> >Jaw </option>
+                      <option <% if (listing.location==="Jid al haj" ) { %> selected <% } %> >Jid al haj </option>
+                      <option <% if (listing.location==="Jid Ali" ) { %> selected <% } %> >Jid Ali </option>
+                      <option <% if (listing.location==="Jidhafs" ) { %> selected <% } %> >Jidhafs </option>
+                      <option <% if (listing.location==="Juffair" ) { %> selected <% } %> >Juffair </option>
+                      <option <% if (listing.location==="Jurdab" ) { %> selected <% } %> >Jurdab </option>
+                      <option <% if (listing.location==="Karbabad" ) { %> selected <% } %> >Karbabad </option>
+                      <option <% if (listing.location==="Karranah" ) { %> selected <% } %> >Karranah </option>
+                      <option <% if (listing.location==="Karzakan" ) { %> selected <% } %> >Karzakan </option>
+                      <option <% if (listing.location==="Khalifa town" ) { %> selected <% } %> >Khalifa town </option>
+                      <option <% if (listing.location==="Lawzi" ) { %> selected <% } %> >Lawzi </option>
+                      <option <% if (listing.location==="Maameer" ) { %> selected <% } %> >Maameer </option>
+                      <option <% if (listing.location==="Malkiya" ) { %> selected <% } %> >Malkiya </option>
+                      <option <% if (listing.location==="Manama" ) { %> selected <% } %> >Manama </option>
+                      <option <% if (listing.location==="Maqaba" ) { %> selected <% } %> >Maqaba </option>
+                      <option <% if (listing.location==="Maqshaa" ) { %> selected <% } %> >Maqshaa </option>
+                      <option <% if (listing.location==="Marassi Al Bahrain" ) { %> selected <% } %> >Marassi Al Bahrain </option>
+                      <option <% if (listing.location==="Markh" ) { %> selected <% } %> >Markh </option>
+                      <option <% if (listing.location==="Muharraq" ) { %> selected <% } %> >Muharraq </option>
+                      <option <% if (listing.location==="Musala" ) { %> selected <% } %> >Musala </option>
+                      <option <% if (listing.location==="Nabih Saleh" ) { %> selected <% } %> >Nabih Saleh </option>
+                      <option <% if (listing.location==="Northern Sehla" ) { %> selected <% } %> >Northern Sehla </option>
+                      <option <% if (listing.location==="Nuranah" ) { %> selected <% } %> >Nuranah </option>
+                      <option <% if (listing.location==="Nuwaidrat" ) { %> selected <% } %> >Nuwaidrat </option>
+                      <option <% if (listing.location==="Qadam" ) { %> selected <% } %> >Qadam </option>
+                      <option <% if (listing.location==="Qudaybiyah" ) { %> selected <% } %> >Qudaybiyah </option>
+                      <option <% if (listing.location==="Ras Hayyan" ) { %> selected <% } %> >Ras Hayyan </option>
+                      <option <% if (listing.location==="Ras Rumman" ) { %> selected <% } %> >Ras Rumman </option>
+                      <option <% if (listing.location==="Ras Zuwaid" ) { %> selected <% } %> >Ras Zuwaid </option>
+                      <option <% if (listing.location==="Reef Island" ) { %> selected <% } %> >Reef Island </option>
+                      <option <% if (listing.location==="Riffa" ) { %> selected <% } %> >Riffa </option>
+                      <option <% if (listing.location==="Riffa Alhajiyat" ) { %> selected <% } %> >Riffa Alhajiyat </option>
+                      <option <% if (listing.location==="Riffa Al Hunainiyah" ) { %> selected <% } %> >Riffa Al Hunainiyah </option>
+                      <option <% if (listing.location==="Riffa Alshamali" ) { %> selected <% } %> >Riffa Alshamali </option>
+                      <option <% if (listing.location==="Riffa Views" ) { %> selected <% } %> >Riffa Views </option>
+                      <option <% if (listing.location==="Sadad" ) { %> selected <% } %> >Sadad </option>
+                      <option <% if (listing.location==="Safra" ) { %> selected <% } %> >Safra </option>
+                      <option <% if (listing.location==="Salhiya" ) { %> selected <% } %> >Salhiya </option>
+                      <option <% if (listing.location==="Salmabad" ) { %> selected <% } %> >Salmabad </option>
+                      <option <% if (listing.location==="Salman Town" ) { %> selected <% } %> >Salman Town </option>
+                      <option <% if (listing.location==="Salmaniya" ) { %> selected <% } %> >Salmaniya </option>
+                      <option <% if (listing.location==="Samaheej" ) { %> selected <% } %> >Samaheej </option>
+                      <option <% if (listing.location==="Sanabis" ) { %> selected <% } %> >Sanabis </option>
+                      <option <% if (listing.location==="Sanad" ) { %> selected <% } %> >Sanad </option>
+                      <option <% if (listing.location==="Saar" ) { %> selected <% } %> >Saar </option>
+                      <option <% if (listing.location==="Saraya 2" ) { %> selected <% } %> >Saraya 2 </option>
+                      <option <% if (listing.location==="Sayah" ) { %> selected <% } %> >Sayah </option>
+                      <option <% if (listing.location==="Seef District" ) { %> selected <% } %> >Seef District </option>
+                      <option <% if (listing.location==="Shahrakan" ) { %> selected <% } %> >Shahrakan </option>
+                      <option <% if (listing.location==="Shakhura" ) { %> selected <% } %> >Shakhura </option>
+                      <option <% if (listing.location==="Sitra" ) { %> selected <% } %> >Sitra </option>
+                      <option <% if (listing.location==="Sitra industrial" ) { %> selected <% } %> >Sitra industrial </option>
+                      <option <% if (listing.location==="South sehla" ) { %> selected <% } %> >South sehla </option>
+                      <option <% if (listing.location==="Sugaya" ) { %> selected <% } %> >Sugaya </option>
+                      <option <% if (listing.location==="Tashan" ) { %> selected <% } %> >Tashan </option>
+                      <option <% if (listing.location==="Tubli" ) { %> selected <% } %> >Tubli </option>
+                      <option <% if (listing.location==="Um alhasam" ) { %> selected <% } %> >Um alhasam </option>
+                      <option <% if (listing.location==="Wadi Al Sail" ) { %> selected <% } %> >Wadi Al Sail </option>
+                      <option <% if (listing.location==="West Riffa" ) { %> selected <% } %> >West Riffa </option>
+                      <option <% if (listing.location==="Zallaq" ) { %> selected <% } %> >Zallaq </option>
+                      <option <% if (listing.location==="Zayed Town" ) { %> selected <% } %> >Zayed Town </option>
+                      <option <% if (listing.location==="Zinj" ) { %> selected <% } %> >Zinj </option>
+                    </select>
+
+                  </div>
+                </div>
+
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Price</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="price" placeholder="Enter New Price" value="<%= listing.price %>" class="form-control form-control-lg"> BHD
+
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Description</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <textarea name="description" placeholder="Enter New Description" class="form-control form-control-lg"><%= listing.description %></textarea>
+
+                  </div>
+                </div>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Area Size</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="areaSize"  placeholder="Property Area Size (sqm)" value="<%= listing.areaSize %>" 
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Bedrooms</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="bedrooms" placeholder="Number of Bedrooms" value="<%= listing.bedrooms %>"
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Bathrooms</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="bathrooms" placeholder="Number of Bathrooms" value="<%= listing.bathrooms %>"
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+
+                <br>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Living Rooms</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="livingRooms" placeholder="Number of Living Rooms" value="<%= listing.livingRooms %>"
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Halls</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="halls" placeholder="Number of Halls" value="<%= listing.halls %>"
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Parkings</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="number" name="parkings" placeholder="Number of Parkings" value="<%= listing.parkings %>"
+                      class="form-control form-control-lg">
+
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Property Pictures</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="file" name="propertyImage" accept="image/*" class="form-control form-control-lg">
+                    <div class="small text-muted mt-2">Upload real photos of the property. Max file size 10 MB</div>
+
+                  </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="px-5 py-4">
+                  <input type="hidden" name="id" value=<%=listing._id %> >
+                  <button style="width: 100%; margin-top: 20px;" type="submit" class="btn btn-danger btn-lg">EDIT
+                    LISTING</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   </div>
   </div>
-  </div>
-</form>
+
+</section><!--/subscription-->
+<!--subscription end -->
+
+<section class="vh-100">
+
+</section>
