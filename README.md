@@ -110,13 +110,25 @@ _More screenshots to be added soon!_
 - [x] User Registration
 - [x] User Login
 - [x] User View Profile
-- [ ] User Edit Profile
+- [x] User Edit Profile
 - [x] Listing Add
 - [x] Listing View
-- [ ] Listing Edit
-- [ ] Listing Delete
+- [x] Listing Edit
+- [x] Listing Delete
+- [ ] Show All User's Listings in Profile
 - [x] User Asking Question (Comment Feature)
-  - [ ] Agent/Company answers the question
+  - [x] Agent/Company answers the question
+  - [ ] Users Delete Their Own Questions
+
+## Future Work
+
+- [ ] Filter Listing Results
+- [ ] Add Error Messages
+- [ ] Pending Questions Notification
+- [ ] Upload Multiple Pictures
+- [ ] Improve Style
+- [ ] Add Dark Mode
+- [ ] Fix Bugs
 
 <!-- CONTACT -->
 
