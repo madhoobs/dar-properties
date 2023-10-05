@@ -19,7 +19,6 @@ exports.listing_add_post = (req, res) => {
       res.redirect('/')
       User.findById(req.body.uid)
         .then((user) => {
-          console.log(user)
           user.listings.push(listing)
           user.save()
         })
@@ -93,7 +92,6 @@ exports.listing_edit_post = async (req, res) => {
 exports.listing_delete_get = (req, res) => {
   Listing.deleteOne({ _id: req.query.id })
     .then(() => {
-      console.log('/profile?id=' + req.user._id.toString())
       res.redirect('/')
     })
     .catch((err) => {

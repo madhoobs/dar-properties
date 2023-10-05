@@ -35,7 +35,6 @@ exports.comment_add_post = (req, res) => {
 
 // Adding a new comment/answer
 exports.comment_show_get = (req, res) => {
-  console.log(req.user._id)
   User.findById(req.user._id)
     .populate({
       path: 'listings',
@@ -104,5 +103,3 @@ exports.comment_delete_get = (req, res) => {
       console.log('Record deletion failed. ' + err)
     })
 }
-
-exports.comment_
