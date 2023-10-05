@@ -64,4 +64,45 @@ exports.comment_show_post = (req, res) => {
     })
 }
 
+exports.comment_edit_get = (req, res) => {
+  Comment.findById(req.query.id)
+    .then((comment) => {
+      res.render('comment/edit', { comment })
+    })
+    .catch((err) => {
+      console.log('Please try again. ' + err)
+    })
+}
+exports.comment_edit_post = async (req, res) => {
+  try {
+    await Comment.findById(req.body.id).then((comment) => {
+      if (req.body.question != null && req.body.question != comment.question) {
+        comment.question = req.body.question
+      }
+      comment
+        .save()
+        .then(() => {
+          res.redirect('/listing?id=' + req.body.listingId)
+        })
+        .catch((err) => {
+          res.send('Try Again')
+          console.log(err)
+        })
+    })
+  } catch (err) {
+    console.log(err)
+    res.send('Error updating comment.')
+  }
+}
+
+exports.comment_delete_get = (req, res) => {
+  Comment.deleteOne({ _id: req.query.id })
+    .then(() => {
+      res.redirect('/listing?id=' + req.query.listing)
+    })
+    .catch((err) => {
+      console.log('Record deletion failed. ' + err)
+    })
+}
+
 exports.comment_
