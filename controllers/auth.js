@@ -56,6 +56,8 @@ exports.auth_logout_get = (req, res) => {
 
 exports.profile_show_get = (req, res) => {
   User.findById(req.query.id)
+    .populate('listings')
+    .populate('comments')
     .then((user) => {
       res.render('profile/profile', { user })
     })

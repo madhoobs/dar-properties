@@ -1,8 +1,13 @@
-<% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
 
 <div class="container">
   <div class="subscribe-title text-center" style="padding: 20px;">
+    <% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
     <h2> My Account </h2>
+    <% } else if (user.companyName) { %>
+      <h2><%= user.companyName %>'s Profile</h2>
+    <% } else { %>
+      <h2><%= user.firstName %>'s Profile</h2>
+    <% } %>
   </div>
 
   <div class="container emp-profile" >
@@ -14,13 +19,14 @@
     </form>
   </div>
 </div>
-<img src="/uploads/<%=currentUser.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
+<img src="/uploads/<%=user.profileImage%>" class="profile-pic" style=" width: 200px; height: auto ;" for="files">
 
+<% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
 <form method="POST" action="/profile/editProfileImage" enctype="multipart/form-data">
     <br>
   <input type="file" name="profileImage" id="files" class="hidden" accept="image/*">
   <input type="hidden" name="id" value="<%= currentUser._id%>">
-
+<% } %>
 
 <table class="table able-striped">
 
@@ -65,9 +71,152 @@
   </tr>
 
 </table>
+<% if (currentUser && currentUser._id.toString() === user._id.toString()) { %>
 <a href="/comment/show" class="btn btn-outline-danger">Pending Questions</a>
 <a href="/profile/edit" class="btn btn-outline-danger"> Edit My Profile</a>
 <input type="submit" class="btn btn-outline-danger" value="Update My Profile Picture"></input>
-
 <% } %>
+
 </form>
+
+<!--explore start -->
+<section id="explore" class="explore">
+  <div class="container">
+    <div class="section-header">
+      <% if(currentUser && currentUser._id.toString() === user._id.toString()) { %>
+        <h2>My Listings</h2>
+      <% } else if (user.companyName) { %>
+        <h2><%= user.companyName %> Listings</h2>
+      <% } else { %>
+        <h2><%= user.firstName %> Listings</h2>
+      <% } %>
+    </div><!--/.section-header-->
+    <div class="explore-content">
+      <div class="row">
+        <!---------------->
+        <!---------------->
+        <% user.listings.forEach((listing, index)=> { %>
+          <div class=" col-md-4 col-sm-6">
+            <div class="single-explore-item">
+              <div class="single-explore-img">
+                <img src="/img/<%= listing.photos[0] %>" alt="explore image">
+                <div class="single-explore-img-info">
+                  <button onclick="window.location.href='#'">trending</button>
+                  <div class="single-explore-image-icon-box">
+                    <ul>
+                      <li>
+                        <div class="single-explore-image-icon">
+                          <i class="fa fa-arrows-alt"></i>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="single-explore-image-icon">
+                          <i class="fa fa-bookmark-o"></i>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="single-explore-txt bg-theme-1">
+                <h2><a href="/listing?id=<%= listing._id %>">
+                    <%= listing.type %> at <%= listing.location %>
+                  </a></h2>
+                <p class="explore-rating-price">
+                  <a href="#">
+                    <%= listing.type %>
+                  </a>
+                  <span class="explore-price-box">
+                    <span class="explore-price">
+                      <%= listing.price %> BHD
+                    </span>
+                  </span>
+                  <a href="#">
+                    <%= listing.location %>
+                  </a>
+                </p>
+                <div class="explore-person">
+                  <div class="row">
+
+                    <div class="col-sm-10">
+                      <p>
+                        <%= listing.description %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="explore-open-close-part">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <button class="close-btn" onclick="window.location.href='/listing?id=<%= listing._id %>'">More
+                        Details</button>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="explore-map-icon">
+                        <a href="https://www.google.com/maps/search/?api=1&query=<%= listing.location %>"><i
+                            data-feather="map-pin"></i></a>
+                        <a href="tel:+973<%= listing.uid.phone %>"><i data-feather="phone"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+            <!---------------->
+            <!---------------->
+      </div>
+    </div>
+
+    
+    <% if(currentUser && currentUser._id.toString()===user._id.toString()) { %>
+      <br><br>
+      <div class="section-header">
+      <h2>My Comments</h2>
+    </div>
+      <% user.comments.forEach((comment)=> { %>
+        <div class="card" style="margin-top: 15px;">
+          <div class="card-body">
+            <ul>
+              <li>&nbsp; <b>Listing:</b>
+                <a href="/listing?id=<%= comment.listingID %>">
+                  Show Listing
+                </a>
+              </li>
+              <li>&nbsp; <b>Your Question:</b>
+                <%= comment.question %>
+              </li>
+              <% if (comment.answer) { %>
+                <li>&nbsp; <b>Seller's Answer:</b>
+                  <%= comment.answer %>
+                </li>
+                <% } else { %>
+                  <li>&nbsp; <b>Waiting for seller to answer...</b></li>
+                  <% } %>
+            </ul>
+              <p style="text-align: right;">
+                <a href="/comment/delete?id=<%= comment._id %>&listing=<%= comment.listingID %>"
+                  style="text-decoration: none;">
+                  <b>❌ DELETE QUESTION</b>
+                </a>
+                <% if (!comment.answer) { %>
+                  &nbsp; &nbsp; &nbsp;
+                  <a href="/comment/edit?id=<%= comment._id %>" style="text-decoration: none;">
+                    <b>📝 EDIT QUESTION</b>
+                  </a>
+                  <% } %>
+              </p>
+          </div>
+        </div>
+        <% }) %>
+          <% if (user.comments.length===0) { %>
+            <br>
+            <p style="text-align: center;">There are no comments yet on this property.</p>
+            <% } %>
+    <% } %>
+    
+  </div><!--/.container-->
+
+</section><!--/.explore-->
+<!--explore end -->
