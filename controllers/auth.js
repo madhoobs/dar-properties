@@ -56,6 +56,8 @@ exports.auth_logout_get = (req, res) => {
 
 exports.profile_show_get = (req, res) => {
   User.findById(req.query.id)
+    .populate('listings')
+    .populate('comments')
     .then((user) => {
       res.render('profile/profile', { user })
     })
@@ -68,7 +70,6 @@ exports.profile_show_get = (req, res) => {
 exports.profile_edit_get = (req, res) => {
   User.findById(req.query.id)
     .then((user) => {
-      console.log(user)
       res.render('profile/edit', { user })
     })
     .catch((err) => {
@@ -104,8 +105,6 @@ exports.profile_edit_post = async (req, res) => {
       const hashedPassword = await bcrypt.hash(password, salt)
       updatedUser.password = hashedPassword
     }
-    console.log(userId)
-    console.log(updatedUser)
     await User.findByIdAndUpdate(userId, updatedUser)
     res.redirect('/profile?id=' + userId)
   } catch (err) {
@@ -140,11 +139,9 @@ exports.profile_changePassword_post = (req, res) => {
 
 //change profile pic
 exports.profile_changepic_get = (req, res) => {
-  console.log('adfdfdf')
   if (req.file.filename) {
     userProfileImage = req.file.filename
   }
-  console.log('id', req.body.id)
   User.findByIdAndUpdate(req.body.id, { profileImage: userProfileImage })
     .then(() => {
       res.redirect(`/profile?id=${req.body.id}`)

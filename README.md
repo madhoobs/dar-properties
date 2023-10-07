@@ -116,6 +116,7 @@ _More screenshots to be added soon!_
 - [x] Listing Edit
 - [x] Listing Delete
 - [ ] Show All User's Listings in Profile
+- [ ] Show All User's Comments in Profile
 - [x] User Asking Question (Comment Feature)
   - [x] Agent/Company answers the question
   - [ ] Users Delete Their Own Questions
